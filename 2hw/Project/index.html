@@ -6,10 +6,14 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="#" class="logo"><img src="img/logo.jpg" alt="logo"></a>
-            <div class="ad-menu" >
+<div class="wrapper">
+
+    <header class="header">
+        <a href="#" class="logo">
+            <img class="logo__img" src="img/logo.jpg" alt="logo">
+        </a>
+
+        <div class="ad-menu">
             <nav class="nav" tabindex='1'>
                 <ul class="menu-main">
                     <li><a href="#">Home</a></li>
@@ -18,88 +22,83 @@
                     <li><a href="#">Contacts</a></li>
                 </ul>
             </nav>
-            </div>
         </div>
     </header>
 
-    <div class="main">
-        <div class="container">
-          <div class="ft_slider">
-              <button class="btn"><a href="#">&#10003; Sign up now</a></button>
-                    <img src="img/iphone.png" style="width: 100%;height: 100%;" alt="iphone" >
-                    <p class="text_on_slider">Lorem ipsum dolor </p>
-                    <p class="text_on_slider_1">Dummy text of the printing & typesetting </p>
-            </div>
+    <div class="wrapper__main">
 
-            <div class="content">
-                <div class="row">
-                    <div class="col" >
-                            <img src="img/pen.jpg" alt="pen">
-                            <div class="text_card">
-                                <div class="title_card">
-                                <h4>Contrary to popular</h4>
-                                </div>
-                                    <div class="main_text1" >
-                                        <p>
-                                            Some bullet text here
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum nunc  </p>
-                                    </div>
-                            </div>
-                    </div>
+        <div class="ft_slider">
+            <button class="ft_slider__btn"><a href="#">&#10003; Sign up now</a></button>
+            <img class="ft_slider__image" src="img/iphone.png" alt="iphone">
+            <p class="ft_slider__text">Lorem ipsum dolor </p>
+            <p class="ft_slider__text1">Dummy text of the printing & typesetting </p>
+        </div>
 
-                        <div class="col">
-                            <img src="img/monitor.jpg" alt="monitor">
-                            <div class="text_card">
-                                <div class="title_card">
-                                    <h4 >Contrary to popular</h4>
-                                </div>
-                                <div class="main_text1" >
-                                    <p>
-                                        Some bullet text here
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum nunc  </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    <div class="col">
-                        <img src="img/package.jpg" alt="package">
-                        <div class="text_card">
-                            <div class="title_card">
-                                <h4>Contrary to popular</h4>
-                            </div>
-                            <div class="main_text1" >
-                                <p>
-                                    Some bullet text here
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum nunc  </p>
-                            </div>
-                        </div>
+        <div class="content content1-wrap">
+            <div class="card">
+                <img class="card__image" src="img/pen.jpg" alt="pen">
+                <div class="card__text">
+                    <h4 class="card__title">Contrary to popular</h4>
+                    <div class="card__m-text">
+                        <p>
+                            Some bullet text here
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum nunc </p>
                     </div>
                 </div>
             </div>
 
-            <div class="content1">
-                <div class="col1_1">
-                    <h2>The Shopping Cart</h2>
-                    <img src="img/package1.jpg" alt="">
+            <div class="card">
+                <img class="card__image" src="img/monitor.jpg" alt="monitor">
+                <div class="card__text">
+                    <h4 class="card__title">Contrary to popular</h4>
+                    <div class="card__m-text">
+                        <p>
+                            Some bullet text here
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum nunc </p>
+                    </div>
                 </div>
-                <div class="col1_2">
-                    <h3>Some bullet text here</h3>
-                    <p class="main_text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Morbi condimentum nunc dictum interdum egestas. Cras purus risus, pretium eget diam non,
-                        lacinia vestibulum nulla. Nulla vitae mi sit amet turpis bibendum feugiat.
-                        Nulla feugiat nulla a pharetra tincidunt.</p>
+            </div>
+
+            <div class="card">
+                <img class="card__image" src="img/package.jpg" alt="package">
+                <div class="card__text">
+
+                    <h4 class="card__title">Contrary to popular</h4>
+
+                    <div class="card__m-text">
+                        <p>
+                            Some bullet text here
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum nunc </p>
+                    </div>
                 </div>
+            </div>
+
+        </div>
+
+        <div class="content content2-wrap">
+            <div class="left-col">
+                <h2 class="left-col__title">The Shopping Cart</h2>
+                <img class="left-col__img" src="img/package1.jpg" alt="">
+            </div>
+            <div class="right-col">
+                <h3 class="right-col__title">Some bullet text here</h3>
+                <p class="main_text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Morbi condimentum nunc dictum interdum egestas. Cras purus risus, pretium eget diam non,
+                    lacinia vestibulum nulla. Nulla vitae mi sit amet turpis bibendum feugiat.
+                    Nulla feugiat nulla a pharetra tincidunt.</p>
             </div>
         </div>
     </div>
 
-            <footer >
-                <div class="container">
-                    <hr>
-                    <div>
-                        <p>Copyright &copy; 2019-2020 cssauthor.com</p>
-                    </div>
-                </div>
-            </footer>
+
+    <footer>
+
+        <hr>
+        <div class="footer">
+            <p class="footer__text" >Copyright &copy; 2019-2020 cssauthor.com</p>
+        </div>
+
+    </footer>
+</div>
 </body>
 </html>

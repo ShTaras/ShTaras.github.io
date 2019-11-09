@@ -35,7 +35,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -60,7 +61,8 @@
       <option name="presentableId" value="Default" />
       <updated>1573234873282</updated>
       <workItem from="1573234874517" duration="216000" />
-      <workItem from="1573235108407" duration="482000" />
+      <workItem from="1573235108407" duration="7774000" />
+      <workItem from="1573310291236" duration="3276000" />
     </task>
     <servers />
   </component>
@@ -79,5 +81,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
