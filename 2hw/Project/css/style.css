@@ -1,10 +1,10 @@
-body{
+*{
     padding: 0;
     margin: 0;
 }
 .wrapper {
 
-    min-width: 550px;
+    min-width: 660px;
 }
 
 
@@ -97,7 +97,7 @@ width: 100%;
     align-self: center;
 }
 
-.ft_slider__image {
+.slider__image {
     align-self: center;
     width: 100%;
     height: 100%
@@ -129,20 +129,29 @@ p {
     font-family: SegoeWPN;
 }
 
-.ft_slider {
+.slider {
     position: relative;
 }
-
+.content_slider{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top:30%;
+    left: 50%;
+    width: 40%;
+}
 
 
 .nav__li {
     display: inline-block;
 }
 
-.ft_slider__btn {
-    position: absolute;
-    top: 75%;
-    left: 50%;
+.slider__btn {
+  //  position: absolute;
+  //  top: 75%;
+  //  left: 50%;
+    width: 200px;
+    order: 3;
     background-color: #5094f2;
     color: white;
     font-size: 24px;
@@ -153,7 +162,7 @@ p {
     cursor: pointer;
 }
 
-.ft_slider__btn a {
+.slider__btn a {
     text-decoration: none;
     background-color: #5094f2;
     color: white;
@@ -161,41 +170,44 @@ p {
     font-family: "Segoe UI";
 }
 
-.ft_slider__text {
+.slider__text {
     font-size: 38pt;
     color: white;
     font-family: "Segoe WP Light";
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    width: 300px;
+  //  position: absolute;
+  //  top: 30%;
+  //  left: 50%;
+  //  width: 300px;
+    margin: 0;
 }
 
-.ft_slider__text1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.slider__text1 {
+ //   position: absolute;
+  //  top: 50%;
+  //  left: 50%;
     font-size: 24pt;
     color: white;
     font-family: "Segoe WP Light";
     width: 300px;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 1050px) {
-    .ft_slider__text {
-        top: 22%;
-        left: 50%;
+    .slider__text {
+       // top: 22%;
+      //  left: 50%;
         font-size: 24pt;
     }
 
-    .ft_slider__text1 {
-        top: 42%;
-        left: 50%;
+    .slider__text1 {
+      //  top: 42%;
+      //  left: 50%;
         font-size: 14pt;
     }
 
-    .ft_slider__btn {
-        top: 70%;
+    .slider__btn {
+      //  top: 70%;
     }
 
 
@@ -245,6 +257,8 @@ p {
 
     .content {
         flex-direction: column;
+
+        margin: 10px 5%;
     }
 
     .content2-wrap {
@@ -288,7 +302,10 @@ p {
 
     .card {
         flex-direction: row;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e5e5e5;
+       // margin: 0 0%;
     }
 
     .left-col__img{
