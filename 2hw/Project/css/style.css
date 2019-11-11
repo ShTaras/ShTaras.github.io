@@ -235,6 +235,7 @@ p {
         top: 25px;
         right: 20px;
         cursor: pointer;
+        z-index: 1;
     }
 
     .nav__li {
@@ -249,7 +250,7 @@ p {
         right: -5%;
         top: 35%;
     }
-    
+
 
     .content {
         flex-direction: column;
