@@ -231,6 +231,7 @@
         z-index: 1;
         right: -5%;
         top: 35%;
+        overflow-y: auto;
     }
 
     .content {
