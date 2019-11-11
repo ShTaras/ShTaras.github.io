@@ -195,7 +195,7 @@ p {
     margin-bottom: 20px;
 }
 
-@media (max-width: 1050px) {
+@media screen and (max-width: 1050px) {
     .slider__text {
        // top: 22%;
       //  left: 50%;
