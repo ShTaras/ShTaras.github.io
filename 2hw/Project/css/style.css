@@ -1,21 +1,17 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
-.wrapper {
 
+.wrapper {
     min-width: 660px;
 }
 
-
 .header {
- position: relative;
-width: 100%;
+    position: relative;
+    width: 100%;
     height: 100px;
-
-   z-index: 1;
 }
-
 
 
 .logo {
@@ -23,9 +19,9 @@ width: 100%;
     float: left;
     margin-top: 10px;
 }
+
 .nav {
     float: right;
-
 }
 
 .nav__menu-main {
@@ -59,9 +55,10 @@ width: 100%;
 }
 
 
-.content1-wrap{
+.content1-wrap {
     margin: 50px 10%;
 }
+
 .content {
     display: flex;
 }
@@ -93,7 +90,7 @@ width: 100%;
 }
 
 
-.card__image{
+.card__image {
     align-self: center;
 }
 
@@ -109,9 +106,8 @@ width: 100%;
 }
 
 h4 {
-    color: #5c9bf3;
-    font-size: 20pt;
-   // margin: 15px 0px -15px;
+
+/ / margin: 15 px 0 px - 15 px;
 }
 
 p {
@@ -132,26 +128,28 @@ p {
 .slider {
     position: relative;
 }
-.content_slider{
+
+.content_slider {
     position: absolute;
     display: flex;
     flex-direction: column;
-    top:30%;
+    top: 30%;
     left: 50%;
     width: 40%;
 }
 
-.card__text{
+.card__text {
     margin-top: 20px;
 }
+
 .nav__li {
     display: inline-block;
 }
 
 .slider__btn {
-  //  position: absolute;
-  //  top: 75%;
-  //  left: 50%;
+/ / position: absolute;
+/ / top: 75 %;
+/ / left: 50 %;
     width: 200px;
     order: 3;
     background-color: #5094f2;
@@ -176,17 +174,17 @@ p {
     font-size: 38pt;
     color: white;
     font-family: "Segoe WP Light";
-  //  position: absolute;
-  //  top: 30%;
-  //  left: 50%;
-  //  width: 300px;
+/ / position: absolute;
+/ / top: 30 %;
+/ / left: 50 %;
+/ / width: 300 px;
     margin: 0;
 }
 
 .slider__text1 {
- //   position: absolute;
-  //  top: 50%;
-  //  left: 50%;
+/ / position: absolute;
+/ / top: 50 %;
+/ / left: 50 %;
     font-size: 24pt;
     color: white;
     font-family: "Segoe WP Light";
@@ -194,68 +192,64 @@ p {
     margin: 0;
     margin-bottom: 20px;
 }
+.card__title{
+    color: #5c9bf3;
+    font-size: 20pt;
+}
+.left-col__title {
+    font-family: "Segoe WP Light";
+    font-size: 30pt;
+    color: #6c6c6c;
+    text-align: center;
+}
 
+.right-col__title {
+    font-family: "Segoe WP Light";
+    font-size: 23pt;
+    color: #6c6c6c;
+}
+
+.footer__text {
+    margin: 20px 20px;
+    text-align: center;
+}
 @media screen and (max-width: 1050px) {
     .slider__text {
-       // top: 22%;
-      //  left: 50%;
         font-size: 24pt;
     }
 
     .slider__text1 {
-      //  top: 42%;
-      //  left: 50%;
         font-size: 14pt;
     }
-
-    .slider__btn {
-      //  top: 70%;
-    }
-
-
-    .nav__menu-main{
+    .nav__menu-main {
         display: none;
     }
-.nav::after{
-    display: block;
-    content: "";
-    background-image: url(../img/shape.png);
-    background-size: 100%;
-    position: absolute;
-    height: 52px;
-    width: 68px;
-    top: 25px;
-    right: 20px;
-    cursor: pointer;
-}
+    .nav::after {
+        display: block;
+        content: "";
+        background-image: url(../img/shape.png);
+        background-size: 100%;
+        position: absolute;
+        height: 52px;
+        width: 68px;
+        top: 25px;
+        right: 20px;
+        cursor: pointer;
+    }
+
     .nav__li {
         width: 50%;
     }
-.nav:hover .nav__menu-main{
-    display: flex;
-    flex-direction: column;
-    //justify-items: center;
-    position: absolute;
-    z-index: 1;
-    right: -5%;
-    top: 35%;
 
-}
-
-
-
-
-    .nav:focus::before {
-        z-index: 0;
+    .nav:hover .nav__menu-main {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 1;
+        right: -5%;
+        top: 35%;
     }
-
-    .nav:focus .nav__menu-main,
-    .nav__menu-main:hover {
-        display: block;
-        z-index: 0;
-
-    }
-
+    
 
     .content {
         flex-direction: column;
@@ -308,10 +302,10 @@ p {
         margin-bottom: 15px;
         padding-bottom: 15px;
         border-bottom: 1px solid #e5e5e5;
-       // margin: 0 0%;
+    / / margin: 0 0 %;
     }
 
-    .left-col__img{
+    .left-col__img {
         display: block;
         width: 45%;
         left: 50%;
@@ -322,19 +316,3 @@ p {
 
 }
 
-.left-col__title {
-    font-family: "Segoe WP Light";
-    font-size: 30pt;
-    color: #6c6c6c;
-    text-align: center;
-}
-
-.right-col__title {
-    font-family: "Segoe WP Light";
-    font-size: 23pt;
-    color: #6c6c6c;
-}
-
-.footer__text {
-    text-align: center;
-}
