@@ -34,7 +34,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Project" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> 502ffa0726ae54da8280d64408d73dcacfed3eb4
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
   </component>
@@ -63,7 +67,10 @@
       <workItem from="1573234874517" duration="216000" />
       <workItem from="1573235108407" duration="7774000" />
       <workItem from="1573310291236" duration="11790000" />
+<<<<<<< HEAD
       <workItem from="1573419862323" duration="14000" />
+=======
+>>>>>>> 502ffa0726ae54da8280d64408d73dcacfed3eb4
     </task>
     <servers />
   </component>
