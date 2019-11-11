@@ -111,7 +111,7 @@ width: 100%;
 h4 {
     color: #5c9bf3;
     font-size: 20pt;
-    margin: 15px 0px -15px;
+   // margin: 15px 0px -15px;
 }
 
 p {
@@ -141,7 +141,9 @@ p {
     width: 40%;
 }
 
-
+.card__text{
+    margin-top: 20px;
+}
 .nav__li {
     display: inline-block;
 }
@@ -296,7 +298,8 @@ p {
     }
 
     .card__title {
-        font-size: 25pt;
+        font-size: 35pt;
+        padding-bottom: 10px;
     }
 
 
@@ -313,6 +316,7 @@ p {
         width: 45%;
         left: 50%;
         margin: 0 auto;
+        padding-top: 20px;
 
     }
 
