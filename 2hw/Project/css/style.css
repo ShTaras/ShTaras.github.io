@@ -198,6 +198,7 @@ p {
         top: 70%;
     }
 
+
     .nav__menu-main{
         display: none;
     }
@@ -223,56 +224,24 @@ p {
     position: absolute;
     z-index: 1;
     right: -5%;
-    top: 30%;
+    top: 35%;
 
 }
 
-    /*.ad-menu{
-        position: absolute;
 
-    }
-    .nav__li {
-      //  width: 50%;
-    }
 
-    .nav__menu-main {
-        display: none;
-    }
 
-    .nav::before{
-        content: "";
-        position: absolute;
-        top: 25px;
-        right: 20px;
-        display: block;
-        cursor: pointer;
-        height: 52px;
-        width: 68px;
-    }
-
-    .nav::before {
-        background-image: url(../img/shape.png);
-        background-size: 100%;
-    }
-
-    .ad-menu::after {
-        z-index: 1;
-    }
-
-    .nav::before {
-        z-index: 2;
-    }
-
-    .nav:hover::before {
+    .nav:focus::before {
         z-index: 0;
     }
 
-    .nav:hover.nav__menu-main,
+    .nav:focus .nav__menu-main,
     .nav__menu-main:hover {
         display: block;
         z-index: 0;
 
-    }*/
+    }
+
 
     .content {
         flex-direction: column;
