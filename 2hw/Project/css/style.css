@@ -165,6 +165,7 @@
     color: white;
     font-family: "Segoe WP Light";
     margin: 0;
+
 }
 
 .slider__text1 {
@@ -259,6 +260,7 @@
     .card__text {
         text-align: left;
         margin-left: 20px;
+
     }
 
     .card__m-text {
