@@ -1,0 +1,109 @@
+body {
+    height: 800px;
+}
+
+.rectangle {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
+
+.rectangle-red {
+    background: red;
+    left: 340px;
+    top: 100px;
+}
+
+.rectangle-blue {
+    background: blue;
+    left: 330px;
+    top: 350px;
+}
+
+.rectangle-green {
+    background: green;
+    top: 130px;
+    left: 560px;
+}
+
+.rectangle-yellow {
+    background: yellow;
+    top: 380px;
+    left: 580px;
+}
+
+.circle {
+
+    width: 90px;
+    height: 90px;
+    background-color: rgb(44, 62, 80);
+    left: 200px;
+    top: 200px;
+    border-radius: 50%;
+    position: relative;
+
+}
+.rectangle:hover{
+    z-index: 10;
+}
+
+.rectangle:hover .circle:before  {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 70px;
+    background: black;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.rectangle:hover .circle:after  {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 70px;
+    background: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transform: rotate(90deg);
+}
+
+/*.circle:before {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 70px;
+    background: black;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+}
+
+.circle:after {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 70px;
+    background: black;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transform: rotate(90deg);
+}*/
