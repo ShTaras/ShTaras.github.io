@@ -36,10 +36,10 @@ body {
     width: 90px;
     height: 90px;
     background-color: rgb(44, 62, 80);
-    left: 200px;
-    top: 200px;
+    right: 20px;
+    bottom: 20px;
     border-radius: 50%;
-    position: relative;
+    position: absolute;
 }
 
 .rectangle:hover {
