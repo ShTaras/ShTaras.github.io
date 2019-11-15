@@ -10,6 +10,7 @@ body {
 .text {
     font-family: 'Montserrat';
     line-height: 1.2;
+
 }
 
 .product_card {
@@ -99,12 +100,14 @@ body {
 .title {
     font-size: 34px;
     color: rgb(58, 77, 92);
+    text-transform: uppercase;
     font-weight: normal;
     margin-bottom: 8px;
 }
 
 .title_categories {
     font-size: 16px;
+    text-transform: uppercase;
     color: rgb(58, 77, 92);
     font-weight: normal;
     margin-bottom: 30px;
@@ -112,6 +115,7 @@ body {
 
 .list-features__title {
     color: rgb(124, 141, 156);
+    text-transform: uppercase;
     margin-bottom: 10px;
     font-size: 13px;
 }
@@ -148,11 +152,13 @@ body {
 .add-info__text {
     color: rgb(124, 141, 156);
     font-size: 11px;
+    text-transform: uppercase;
 }
 
 .quantity__title {
     font-size: 11px;
     color: rgb(124, 141, 156);
+    text-transform: uppercase;
 }
 
 .cost {
