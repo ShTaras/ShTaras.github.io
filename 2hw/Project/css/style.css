@@ -350,4 +350,7 @@
     .footer__text{
         font-size: 10pt;
     }
+    .contentSlider{
+        width: auto;
+    }
 }
