@@ -300,9 +300,25 @@
     .card__title {
         font-size: 22pt;
         padding-bottom: 10px;
+        font-weight: 400;
+        font-family: "Segoe UI";
     }
     .slider__text {
         font-size: 17pt;
     }
+    slider__text1 {
+        font-size: 24pt;
 
+        width:auto;
+
+    }
+    .card__image{
+        width: 30%;
+    }
+    .contentSlider{
+        top: 20%;
+    }
+    .leftCol__img{
+        width: 35%;
+    }
 }
