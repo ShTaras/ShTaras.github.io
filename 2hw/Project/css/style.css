@@ -173,7 +173,7 @@
     font-size: 24pt;
     color: white;
     font-family: "Segoe WP Light";
-    width: 300px;
+   // width: 300px;
     margin-bottom: 20px;
 }
 .card__title{
@@ -294,31 +294,39 @@
         padding-top: 20px;
     }
 }
-@media screen and (max-width: 700px)
+@media screen and (max-width: 620px)
 {
 
     .card__title {
-        font-size: 22pt;
+        font-size: 18pt;
         padding-bottom: 10px;
         font-weight: 400;
         font-family: "Segoe UI";
     }
     .slider__text {
-        font-size: 17pt;
+        font-size: 14pt;
     }
-    slider__text1 {
-        font-size: 24pt;
+    .slider__text1 {
+        font-size: 12pt;
 
-        width:auto;
 
     }
     .card__image{
-        width: 30%;
+        width: 25%;
     }
     .contentSlider{
         top: 20%;
     }
     .leftCol__img{
         width: 35%;
+    }
+    .slider__btn{
+        width: 160px;
+    }
+    .slider__btn a{
+        font-size: 16pt;
+    }
+    .card__m-text{
+        font-size: 14pt;
     }
 }
