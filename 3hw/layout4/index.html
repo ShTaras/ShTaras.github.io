@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product card</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="productCard">
+
+    <div class="productPhotos">
+
+        <div class="logo">
+            <img class="logo__img" src="img/Logo.png" alt="logo">
+        </div>
+
+        <img class="productPhotos__shadow" src="img/camera-shadow.png" alt="shadow">
+
+        <img class="photoActive" src="img/camera.png" alt="camera">
+
+        <div class="photosMini">
+            <div class="productPhotos__photo">
+                <img class="photo" src="img/camera-top.png" alt="camera-top">
+            </div>
+            <div class="productPhotos__photo">
+                <img class="photo" src="img/camera-back.png" alt="camera-back">
+            </div>
+            <div class="productPhotos__photo">
+                <img class="photo" src="img/camera-right.png" alt="camera-right">
+            </div>
+        </div>
+    </div>
+
+    <div class="productInfo">
+        <h1 class="title text">Fujifilm x-t10</h1>
+        <h2 class="titleCategories text">Mirrorles digital camera</h2>
+        <div class="listFeatures text">
+            <h3 class="listFeatures__title  text">Features</h3>
+            <ul class="listFeatures__ul">
+                <li class="listFeatures__li  text">16.3 MP APS-C X-Trans CMOS II Sensor</li>
+                <li class="listFeatures__li  text">0.39"2,360k-Dot 0.62x OLED Viewfinder</li>
+                <li class="listFeatures__li  text">3.0"920k-Dot Tilting LCD Monitor</li>
+                <li class="listFeatures__li  text">Full HD 1080p Video Recording at 60 fps</li>
+                <li class="listFeatures__li  text">Built-in WI-FI Connectivity</li>
+            </ul>
+            <div class="addInfo">
+                <p class="addInfo__text  text">In stock</p>
+                <p class="addInfo__text  text">Free shipping</p>
+                <p class="addInfo__text  text">Reviews</p>
+            </div>
+        </div>
+        <div class="quantity">
+            <h3 class="quantity__title  text">Quantity</h3>
+            <input type="button" class="quantity__button text" value="-">
+            <input type="button" class="quantity__button text" value="1">
+            <input type="button" class="quantity__button text" value="+">
+
+        </div>
+        <div class="cost">
+            <p class="cost__price  text">$599</p>
+            <p class="cost__oldPrice  text">Old Price: $799</p>
+        </div>
+        <div class="buttons">
+            <input type="button" class="buttons__addToCart text" value="Add to Cart">
+            <input type="button" class="buttons__addToList text" value="Add to Wish List">
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

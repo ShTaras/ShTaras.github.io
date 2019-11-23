@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5874d93d-ed78-40cc-8f0b-7b4c5c366799" name="Default Changelist" comment="" />
+    <list default="true" id="cf4b6782-1fd5-4a70-b1b4-920c13f7d08a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,34 +13,23 @@
       <executable />
     </execution>
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
     </option>
-    <expand />
-    <select />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1TLMMPaw7aQG3TkV1TqXhCLWsXC" />
+  <component name="ProjectId" id="1TbkGn5zZaGNRh2KNpnIVdVdXaQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-<<<<<<< HEAD
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Project" />
-=======
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
->>>>>>> 502ffa0726ae54da8280d64408d73dcacfed3eb4
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -59,18 +48,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5874d93d-ed78-40cc-8f0b-7b4c5c366799" name="Default Changelist" comment="" />
-      <created>1573234873282</created>
+      <changelist id="cf4b6782-1fd5-4a70-b1b4-920c13f7d08a" name="Default Changelist" comment="" />
+      <created>1573736088649</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573234873282</updated>
-      <workItem from="1573234874517" duration="216000" />
-      <workItem from="1573235108407" duration="7774000" />
-      <workItem from="1573310291236" duration="11790000" />
-<<<<<<< HEAD
-      <workItem from="1573419862323" duration="14000" />
-=======
->>>>>>> 502ffa0726ae54da8280d64408d73dcacfed3eb4
+      <updated>1573736088649</updated>
+      <workItem from="1573736090400" duration="3695000" />
+      <workItem from="1573743702352" duration="16625000" />
+      <workItem from="1573812463345" duration="15600000" />
+      <workItem from="1573833116040" duration="394000" />
+      <workItem from="1574525726801" duration="1677000" />
     </task>
     <servers />
   </component>
@@ -89,9 +76,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

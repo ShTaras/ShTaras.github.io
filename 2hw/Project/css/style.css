@@ -1,31 +1,24 @@
-body{
+* {
     padding: 0;
     margin: 0;
 }
-.wrapper {
 
-    min-width: 550px;
-}
 
 
 .header {
- position: relative;
-width: 100%;
+    position: relative;
+    width: 100%;
     height: 100px;
-
-   z-index: 1;
 }
-
-
 
 .logo {
     margin-left: 10%;
     float: left;
     margin-top: 10px;
 }
+
 .nav {
     float: right;
-
 }
 
 .nav__menu-main {
@@ -59,14 +52,15 @@ width: 100%;
 }
 
 
-.content1-wrap{
+.content1Wrap {
     margin: 50px 10%;
 }
+
 .content {
     display: flex;
 }
 
-.content2-wrap {
+.content2Wrap {
     display: flex;
     margin-left: 12%;
     margin-right: 12%;
@@ -78,11 +72,11 @@ width: 100%;
     text-align: center;
 }
 
-.right-col {
+.rightCol {
     padding: 50px 60px 0px;
 }
 
-.left_col {
+.leftCol {
     text-align: center;
     justify-content: center;
 }
@@ -93,28 +87,21 @@ width: 100%;
 }
 
 
-.card__image{
+.card__image {
     align-self: center;
 }
 
-.ft_slider__image {
+.slider__image {
     align-self: center;
     width: 100%;
     height: 100%
-
 }
 
-.right-col .main_text2 {
+.rightCol__mainText2 {
     line-height: 2.5;
 }
 
-h4 {
-    color: #5c9bf3;
-    font-size: 20pt;
-    margin: 15px 0px -15px;
-}
-
-p {
+.text {
     font-family: "Segoe UI";
     color: #6c6c6c;
 }
@@ -129,20 +116,30 @@ p {
     font-family: SegoeWPN;
 }
 
-.ft_slider {
+.slider {
     position: relative;
 }
 
+.contentSlider {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 30%;
+    left: 50%;
+    width: 40%;
+}
 
+.card__text {
+    margin-top: 20px;
+}
 
 .nav__li {
     display: inline-block;
 }
 
-.ft_slider__btn {
-    position: absolute;
-    top: 75%;
-    left: 50%;
+.slider__btn {
+    width: 200px;
+    order: 3;
     background-color: #5094f2;
     color: white;
     font-size: 24px;
@@ -153,7 +150,7 @@ p {
     cursor: pointer;
 }
 
-.ft_slider__btn a {
+.slider__btn a {
     text-decoration: none;
     background-color: #5094f2;
     color: white;
@@ -161,106 +158,95 @@ p {
     font-family: "Segoe UI";
 }
 
-.ft_slider__text {
+.slider__text {
     font-size: 38pt;
     color: white;
     font-family: "Segoe WP Light";
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    width: 300px;
+    margin: 0;
+
 }
 
-.ft_slider__text1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.slider__text1 {
     font-size: 24pt;
     color: white;
     font-family: "Segoe WP Light";
     width: 300px;
+    margin-bottom: 20px;
+}
+.card__title{
+    color: #5c9bf3;
+    font-size: 20pt;
+}
+.leftCol__title {
+    font-family: "Segoe WP Light";
+    font-size: 30pt;
+    color: #6c6c6c;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-@media (max-width: 1050px) {
-    .ft_slider__text {
-        top: 22%;
-        left: 50%;
+.rightCol__title {
+    font-family: "Segoe WP Light";
+    font-size: 23pt;
+    color: #6c6c6c;
+}
+
+.footer__text {
+    margin: 20px 20px;
+    text-align: center;
+}
+@media screen and (max-width: 1050px) {
+    .slider__text {
         font-size: 24pt;
     }
 
-    .ft_slider__text1 {
-        top: 42%;
-        left: 50%;
+    .slider__text1 {
         font-size: 14pt;
     }
-
-    .ft_slider__btn {
-        top: 70%;
+    .nav__menu-main {
+        display: none;
     }
-    .ad-menu{
+    .nav::after {
+        display: block;
+        content: "";
+        background-image: url(../img/shape.png);
+        background-size: 100%;
         position: absolute;
-        right: 0%;
+        height: 52px;
+        width: 68px;
+        top: 25px;
+        right: 20px;
+        cursor: pointer;
     }
+
     .nav__li {
         width: 50%;
     }
 
-    .nav__menu-main {
-        display: none;
-    }
-
-    .nav::before,
-    .ad-menu::after {
-        content: "";
+    .nav:hover .nav__menu-main {
+        display: flex;
+        flex-direction: column;
         position: absolute;
-        top: 25px;
-        right: 20px;
-        display: block;
-        cursor: pointer;
-        height: 52px;
-        width: 68px;
-    }
-
-    .nav::before {
-        background-image: url(../img/shape.png);
-        background-size: 100%;
-    }
-
-    .ad-menu::after {
         z-index: 1;
-    }
-
-    .nav::before {
-        z-index: 2;
-    }
-
-    .nav:focus::before {
-        z-index: 0;
-    }
-
-    .nav:focus .nav__menu-main,
-    .nav__menu-main:hover {
-        display: block;
-        z-index: 0;
-
+        right: -5%;
+        top: 35%;
     }
 
     .content {
         flex-direction: column;
+        margin: 10px 5%;
     }
 
-    .content2-wrap {
+    .content2Wrap {
         flex-direction: column;
         margin-left: 0%;
         margin-right: 0%;
-
     }
-
-    .left-col {
+    .leftCol {
         left: 50%;
     }
 
-    .right-col {
+    .rightCol {
         padding: 0px 50px 0px;
     }
 
@@ -272,6 +258,7 @@ p {
     .card__text {
         text-align: left;
         margin-left: 20px;
+
     }
 
     .card__m-text {
@@ -284,38 +271,23 @@ p {
     }
 
     .card__title {
-        font-size: 25pt;
+        font-size: 35pt;
+        padding-bottom: 10px;
     }
-
 
     .card {
         flex-direction: row;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e5e5e5;
     }
 
-    .left-col__img{
+    .leftCol__img {
         display: block;
         width: 45%;
         left: 50%;
         margin: 0 auto;
-
+        padding-top: 20px;
     }
-
 }
 
-.left-col__title {
-    font-family: "Segoe WP Light";
-    font-size: 30pt;
-    color: #6c6c6c;
-    text-align: center;
-}
-
-.right-col__title {
-    font-family: "Segoe WP Light";
-    font-size: 23pt;
-    color: #6c6c6c;
-}
-
-.footer__text {
-    text-align: center;
-}
