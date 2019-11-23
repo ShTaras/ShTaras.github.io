@@ -29,7 +29,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../layout4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RunDashboard">
@@ -57,7 +57,6 @@
       <workItem from="1573725846300" duration="5881000" />
       <workItem from="1573736065596" duration="23000" />
       <workItem from="1573738792372" duration="1353000" />
-      <workItem from="1574523669765" duration="1414000" />
     </task>
     <servers />
   </component>
