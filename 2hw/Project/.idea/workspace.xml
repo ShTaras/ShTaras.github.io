@@ -27,7 +27,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="last_opened_file_path" value="F:/FULL_STACK/3/project" />
+>>>>>>> ffdd18e430c6601a0f40004e87b5dcd4963a08ff
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RunDashboard">
@@ -63,7 +67,10 @@
       <workItem from="1573466546737" duration="5711000" />
       <workItem from="1573477176241" duration="735000" />
       <workItem from="1573491245865" duration="262000" />
+<<<<<<< HEAD
       <workItem from="1574524461047" duration="1761000" />
+=======
+>>>>>>> ffdd18e430c6601a0f40004e87b5dcd4963a08ff
     </task>
     <servers />
   </component>
