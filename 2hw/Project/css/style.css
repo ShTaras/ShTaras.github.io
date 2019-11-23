@@ -275,7 +275,7 @@
     }
 
     .card__title {
-        font-size: 35pt;
+        font-size: 30pt;
         padding-bottom: 10px;
     }
 
@@ -327,7 +327,7 @@
         font-size: 16pt;
     }
     .card__m-text{
-        font-size: 12pt;
+        font-size: 11pt;
     }
     .logo{
         margin-left: 4%;
@@ -337,5 +337,17 @@
         height: 39px;
         width: 52px;
 
+    }
+    .leftCol__title{
+        font-size: 24pt;
+    }
+    .rightCol__title{
+        font-size: 20pt;
+    }
+    .slider__btn{
+        padding: 3px 4px;
+    }
+    .footer__text{
+        font-size: 10pt;
     }
 }
