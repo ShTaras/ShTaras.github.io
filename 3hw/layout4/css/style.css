@@ -250,6 +250,7 @@ body {
 @media screen and (max-width: 1080px){
     .productCard{
         flex-direction: column;
+        margin: 0;
     }
     .productPhotos{
         padding: 0;
@@ -267,6 +268,7 @@ body {
     .productPhotos__shadow{
         top: 250px;
         left: -30px;
+        width: 560px;
     }
     .productPhotos__photo{
         width: 90px;
