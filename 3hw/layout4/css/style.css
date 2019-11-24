@@ -201,7 +201,7 @@ body {
     color: rgb(124, 141, 156);
 }
 
-.quantity__button:hover {
+.quantity__button-active:hover {
     cursor: pointer;
     background-color: rgb(124, 141, 156);
     transition: background-color 0.7s;

@@ -6,6 +6,7 @@
     <title>Product card</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <div class="productCard">
@@ -53,9 +54,9 @@
         </div>
         <div class="quantity">
             <h3 class="quantity__title  text">Quantity</h3>
-            <input type="button" class="quantity__button text" value="-">
-            <input type="button" class="quantity__button text" value="1">
-            <input type="button" class="quantity__button text" value="+">
+            <input type="button" class="quantity__button quantity__button-active text" value="-" id="minusCount">
+            <input type="button" class="quantity__button text" value="" id = "count">
+            <input type="button" class="quantity__button quantity__button-active text" value="+" id="plusCount">
 
         </div>
         <div class="cost">
@@ -69,5 +70,6 @@
 
     </div>
 </div>
+<script type="text/javascript" src="scripts/script.js"></script>
 </body>
 </html>
