@@ -5,7 +5,6 @@
 
 body {
     background-color: #d5d5d5;
-    margin: 10% 19%;
 }
 
 .text {
@@ -18,6 +17,7 @@ body {
     display: flex;
     max-width: max-content;
     min-width: min-content;
+    margin: 50px auto;
 
 }
 
@@ -246,4 +246,30 @@ body {
     background-color: rgb(124, 141, 156);
     transition: background-color 0.7s;
     cursor: pointer;
+}
+@media screen and (max-width: 1080px){
+    .productCard{
+        flex-direction: column;
+    }
+    .productPhotos{
+        padding: 0;
+    }
+    .photosMini{
+        flex-direction: row-reverse;
+        top: 540px;
+        right: 120px;
+    }
+    .photoActive{
+        width: 370px;
+        left: 70px;
+        top: 100px;
+    }
+    .productPhotos__shadow{
+        top: 250px;
+        left: -30px;
+    }
+    .productPhotos__photo{
+        width: 90px;
+        height: 95px;
+    }
 }
