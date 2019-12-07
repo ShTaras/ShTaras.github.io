@@ -91,7 +91,7 @@ header {
     font-weight: 100; }
   .block .button {
     font-size: 15px;
-    font-family: "Raleway";
+    margin-top: 20px;
     color: #061e37;
     font-weight: bold;
     text-transform: uppercase;
@@ -111,10 +111,9 @@ header {
       transition: 0.8s;
       cursor: pointer;
       color: white; }
-  .block .buttons {
-    margin-top: 20px; }
-    .block .buttons__tryForFree {
-      margin-left: 25px; }
+
+.btnTryForFree {
+  margin-left: 25px; }
 
 .videoPlayer {
   width: 40%;
@@ -163,7 +162,7 @@ header {
   .card__text {
     font-size: 15px;
     color: #78909c;
-    line-height: 1.333;
+    line-height: 1.5;
     padding: 15px 10%; }
   .card__img {
     height: 80px; }

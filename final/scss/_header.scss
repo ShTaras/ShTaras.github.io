@@ -121,7 +121,7 @@ header {
 
   .button {
     font-size: 15px;
-    font-family: "Raleway";
+    margin-top: 20px;
     color: rgb(6, 30, 55);
     font-weight: bold;
     text-transform: uppercase;
@@ -142,15 +142,11 @@ header {
       color: rgb(255, 255, 255);
     }
   }
-  .buttons{
-    margin-top: 20px;
-    &__tryForFree{
-      margin-left: 25px;
-    }
-  }
 
 }
-
+.btnTryForFree{
+  margin-left: 25px;
+}
 .videoPlayer{
   width: 40%;
   position: relative;

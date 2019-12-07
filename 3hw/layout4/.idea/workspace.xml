@@ -28,7 +28,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../2hw/Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -60,6 +60,7 @@
       <workItem from="1573833116040" duration="394000" />
       <workItem from="1574588104130" duration="5224000" />
       <workItem from="1574593428688" duration="111000" />
+      <workItem from="1575049673887" duration="167000" />
     </task>
     <servers />
   </component>
