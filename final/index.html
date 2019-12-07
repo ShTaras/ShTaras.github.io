@@ -3,6 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700&display=swap"
           rel="stylesheet">
     <title>Title</title>
@@ -69,7 +70,7 @@
 
 
         <div class="block2">
-            <div class="card">
+            <div class="card animated fadeInRight wow">
                 <img class="card__img" src="img/card1.png" alt="">
                 <div class="card__title text">Title Goes Here</div>
                 <div class="card__text text">
@@ -80,7 +81,7 @@
                     </p>
                 </div>
             </div>
-            <div class="card">
+            <div class="card animated fadeInRight wow" data-wow-delay="0.2s">
                 <img class="card__img" src="img/card2.png" alt="">
                 <div class="card__title text">Title Goes Here</div>
                 <div class="card__text text">
@@ -91,7 +92,7 @@
                     </p>
                 </div>
             </div>
-            <div class="card">
+            <div class="card animated fadeInRight wow" data-wow-delay="0.4s">
                 <img class="card__img" src="img/card3.png" alt="">
                 <div class="card__title text">Title Goes Here</div>
                 <div class="card__text text">
@@ -103,9 +104,57 @@
                 </div>
             </div>
         </div>
+        <div class="block3">
+            <input type="button" class="btnGetStarted button" value="Get Started">
+        </div>
+
+        <div class="block4">
+            <div class="rectangle rectangle1">
+                <div class="rectangle__img">
+
+                </div>
+                <div class="rectangle__text">
+
+                </div>
+            </div>
+            <div class="rectangle rectangle2">
+                <div class="rectangle__img">
+
+                </div>
+                <div class="rectangle__text">
+
+                </div>
+            </div>
+            <div class="rectangle rectangle3">
+                <div class="rectangle__img">
+
+                </div>
+                <div class="rectangle__text">
+
+                </div>
+            </div>
+            <div class="rectangle rectangle4">
+                <div class="rectangle__img">
+
+                </div>
+                <div class="rectangle__text">
+
+                </div>
+            </div>
+
+        </div>
 
     </main>
 
 </div>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW(
+        {
+            offset:       200,          // расстояние в пикселях от нижнего края браузера до верхней границы элемента, необходимое для начала анимации (по умолчанию, 0)
+            scrollContainer: 'wrapper'
+        }
+    ).init();
+</script>
 </body>
 </html>

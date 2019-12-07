@@ -1,0 +1,101 @@
+.block1 {
+  text-align: center;
+
+  padding: 30px 33%;
+
+  &__title {
+    font-size: 45px;
+    color: rgb(6, 30, 55);
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  &__text1 {
+    font-size: 25px;
+    color: rgb(176, 190, 197);
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 10px;
+
+  }
+
+  &__text2 {
+    font-size: 15px;
+    color: rgb(176, 190, 197);
+    line-height: 1.667;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+.block2 {
+  display: flex;
+  padding: 0 50px;
+  margin-top: 30px;
+
+}
+
+.card {
+  text-align: center;
+  overflow: hidden;
+
+
+  &__title {
+    font-size: 20px;
+    color: rgb(6, 30, 55);
+    font-weight: bold;
+    line-height: 1.25;
+    padding-top: 15px;
+  }
+
+  &__text {
+    font-size: 15px;
+    color: rgb(120, 144, 156);
+    line-height: 1.5;
+    padding: 15px 10%;
+  }
+
+  &__img {
+    height: 80px;
+  }
+}
+
+.block3 {
+  margin: 70px 0px;
+}
+
+.btnGetStarted {
+  display: block;
+  margin: 0 auto;
+  width: 160px;
+  height: 55px;
+  background: green;
+
+  &:hover {
+    background: aqua;
+  }
+}
+.block4{
+  display: flex;
+  flex-direction: row;
+}
+.rectangle{
+
+  height: 200px;
+  width: 25%;
+}
+.rectangle1{
+  background: #061e37;
+}
+.rectangle2{
+background-color: forestgreen;
+}
+.rectangle3{
+  background-color: darkgray;
+}
+.rectangle4{
+  background-color: darkcyan;
+
+}

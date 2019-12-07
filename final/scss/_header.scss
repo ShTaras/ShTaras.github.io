@@ -56,29 +56,6 @@ header {
   }
 }
 
-
-.signUpBtn {
-  border-width: 1px;
-  border-color: rgb(255, 255, 255);
-  border-style: solid;
-  border-radius: 2px;
-
-  width: 78px;
-  height: 23px;
-  font-size: 12px;
-  background: rgba(255, 255, 255, 0);
-  color: rgb(255, 255, 255);
-
-  text-align: center;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: 0.7s;
-  }
-}
-
-
 .navigation {
   display: flex;
   //position: absolute;
@@ -99,7 +76,7 @@ header {
 
 .block {
   width: 45%;
- // min-width: 350px;
+  // min-width: 350px;
 
   &__title {
     font-size: 18pt;
@@ -119,40 +96,89 @@ header {
     font-weight: 100;
   }
 
-  .button {
-    font-size: 15px;
-    margin-top: 20px;
-    color: rgb(6, 30, 55);
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 1.2;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
-    border: none;
 
-    width: 160px;
-    height: 55px;
-    &:hover{
-      background-color: rgb(6, 30, 55);
-      transition: 0.8s;
-      cursor: pointer;
-      color: rgb(255, 255, 255);
-    }
+
+
+
+}
+
+.button {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.15);
+  border: none;
+
+
+  &:hover {
+    transition: .8s;
+    cursor: pointer;
+
   }
+}
+.signUpBtn {
+  border-width: 1px;
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-radius: 2px;
 
+  width: 78px;
+  height: 23px;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0);
+  color: rgb(255, 255, 255);
+
+  text-align: center;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.5);
+
+    cursor: pointer;
+    transition: 0.7s;
+
+  }
 }
-.btnTryForFree{
+
+
+.buttons {
+  margin-top: 20px;
+}
+.btnBuyNow {
+  color: rgb(6, 30, 55);
+  background-color: rgb(255, 255, 255);
+  width: 160px;
+  height: 55px;
+
+  &:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(6, 30, 55);
+  }
+}
+
+.btnTryForFree {
+  color: rgb(6, 30, 55);
+  background-color: rgb(255, 255, 255);
   margin-left: 25px;
+  width: 160px;
+  height: 55px;
+
+  &:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(6, 30, 55);
+  }
 }
-.videoPlayer{
+
+.videoPlayer {
   width: 40%;
   position: relative;
 
-  &__bgPlayer{
-      width: 100%;
+  &__bgPlayer {
+    width: 100%;
     height: auto;
   }
 }
