@@ -3,13 +3,6 @@
 
   padding: 30px 33%;
 
-  &__title {
-    font-size: 45px;
-    color: rgb(6, 30, 55);
-    font-weight: bold;
-    line-height: 1.2;
-    text-align: center;
-  }
 
   &__text1 {
     font-size: 25px;
@@ -22,12 +15,17 @@
   }
 
   &__text2 {
-    font-size: 15px;
-    color: rgb(176, 190, 197);
-    line-height: 1.667;
-    text-align: center;
-    margin-top: 10px;
+    padding-top: 10px;
   }
+
+
+}
+
+.title {
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .block2 {
@@ -44,7 +42,7 @@
 
   &__title {
     font-size: 20px;
-    color: rgb(6, 30, 55);
+
     font-weight: bold;
     line-height: 1.25;
     padding-top: 15px;
@@ -71,31 +69,134 @@
   margin: 0 auto;
   width: 160px;
   height: 55px;
-  background: green;
+  background-color: rgb(29, 233, 182);
+  color: rgb(255, 255, 255);
 
   &:hover {
     background: aqua;
   }
 }
-.block4{
+
+.block4 {
   display: flex;
   flex-direction: row;
 }
-.rectangle{
 
-  height: 200px;
+.rectangle {
+  display: flex;
+  height: 150px;
   width: 25%;
-}
-.rectangle1{
-  background: #061e37;
-}
-.rectangle2{
-background-color: forestgreen;
-}
-.rectangle3{
-  background-color: darkgray;
-}
-.rectangle4{
-  background-color: darkcyan;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    margin: auto;
+
+  }
+
+  &__text {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1.25;
+    text-align: left;
+    margin-left: 20px;
+  }
 
 }
+
+.rectangle1 {
+  background-color: rgb(128, 216, 255);
+}
+
+.rectangle2 {
+  background-color: rgb(130, 177, 255)
+}
+
+.rectangle3 {
+  background-color: rgb(179, 136, 255);
+}
+
+.rectangle4 {
+  background-color: rgb(234, 128, 252);
+
+}
+
+.block5 {
+  padding-top: 80px;
+
+  &__text {
+    margin: 0 30%;
+    padding-bottom: 40px;
+    padding-top: 10px;
+    text-align: center;
+  }
+}
+
+.dropDownList {
+  margin: 0 auto;
+  max-width: 45%;
+
+}
+
+.item {
+  border-radius: 5px;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+ padding: 15px 25px;
+
+  margin-bottom: 15px;
+  overflow: hidden;
+
+  &:before {
+    display: block;
+    content: "";
+    float: right;
+    width: 11px;
+    height: 6px;
+    margin-top: 10px;
+    background-image: url("../img/arrow_drop_down.png");
+  }
+
+  &__content {
+
+    padding-top: 15px;
+    display: none;
+
+
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+
+  }
+
+  &__textTitle {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 20px;
+
+  }
+
+  &__text {
+    text-align: left;
+    margin-left: 25px;
+    font-weight: 600;
+  }
+  &-active{
+    .item__content{
+      display: flex;
+
+    }
+  }
+
+
+  &__title{
+    &:hover{
+      cursor: pointer;
+
+    }
+  }
+}
+
+
