@@ -29,8 +29,8 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../3hw/layout4" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -61,6 +61,7 @@
       <workItem from="1575740750510" duration="579000" />
       <workItem from="1575741483672" duration="6465000" />
       <workItem from="1575811238708" duration="17175000" />
+      <workItem from="1576158037591" duration="22404000" />
     </task>
     <servers />
   </component>
