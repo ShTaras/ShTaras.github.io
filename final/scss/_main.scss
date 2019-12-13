@@ -1,7 +1,7 @@
 .block1 {
   text-align: center;
 
-  padding: 30px 33%;
+  padding: 80px 60px;
 
 
   &__text1 {
@@ -15,7 +15,8 @@
   }
 
   &__text2 {
-    padding-top: 10px;
+    padding: 10px 33%;
+
   }
 
 
@@ -30,7 +31,7 @@
 
 .block2 {
   display: flex;
-  padding: 0 50px;
+  padding: 0 60px;
   margin-top: 30px;
 
 }
@@ -121,7 +122,7 @@
 
 .block5 {
 
-  padding: 80px 4%;
+  padding: 80px 60px;
 
   &__text {
     margin: 0 30%;
@@ -202,7 +203,7 @@
   background-image: url("../img/bg1.png");
   background-size: cover;
   display: flex;
-  padding: 80px 4%;
+  padding: 80px 60px;
 
   .btnGetStarted {
     margin: 50px 0 0 0;
@@ -233,15 +234,53 @@
   width: 50%;
   margin-left: auto;
 
+  &::before {
+    display: block;
+    content: "";
+    background-image: url("../img/keyboard_arrow_up.png");
+    width: 23px;
+    height: 14px;
+    margin-left: 55%;
+    transform: translateY(-40px);
+
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    background-image: url("../img/keyboard_arrow_down.png");
+    width: 23px;
+    height: 14px;
+    margin-left: 55%;
+    transform: translateY(40px);
+  }
+
+  &:hover {
+    &:before {
+      cursor: pointer;
+    }
+
+    &:after {
+      cursor: pointer;
+    }
+
+  }
 }
 
 .comment {
+
+  &:last-child {
+    padding-bottom: 0px;
+  }
+
   display: flex;
-  margin-bottom: 30px;
+  padding-bottom: 60px;
   align-items: center;
-  &__avatar{
+
+  &__avatar {
     margin-right: 25px;
   }
+
   &__body {
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
@@ -249,16 +288,62 @@
     padding: 25px 25px;
   }
 
-  &__text {
-    color: rgb(120, 144, 156);
-    font-size: 15px;
-    line-height: 1.667;
-  }
 
   &__author {
-    font-size: 18px;
-    font-weight: bold;
     margin-bottom: 10px;
+  }
+}
+
+.block7 {
+  padding: 80px 60px;
+
+  &__text {
+    margin: 0 30%;
+    padding-bottom: 40px;
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .avatars {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0 30px 0;
+    &__avatar{
+      padding: 0 10px;
+transform: scale(0.6);
+      opacity: 0.4;
+      &-active{
+        transform: scale(1);
+        opacity: 1;
+
+        &:after{
+          position: absolute;
+          display: block;
+          content: "";
+          border: 15px inset transparent;
+          border-radius: 50%;
+          border-image: radial-gradient( transparent 0%, #000000 100%);
+          border-image-slice: 1;
+
+          width: 144px;
+          height: 139px;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+
+  }
+  .team {
+    &__author {
+
+      text-align: center;
+      padding-bottom: 10px;
+    }
+    &__text{
+text-align: center;
+      margin: 0 33%;
+    }
   }
 }
 

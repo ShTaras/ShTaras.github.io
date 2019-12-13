@@ -6,7 +6,7 @@ header {
   background-image: url("../img/bg.png");
   position: relative;
   background-size: cover;
-  padding: 30px 4%; }
+  padding: 30px 60px; }
 
 .nav {
   text-align: center; }
@@ -134,7 +134,7 @@ header {
 
 .block1 {
   text-align: center;
-  padding: 30px 33%; }
+  padding: 80px 60px; }
   .block1__text1 {
     font-size: 25px;
     color: #b0bec5;
@@ -143,7 +143,7 @@ header {
     text-align: center;
     margin-top: 10px; }
   .block1__text2 {
-    padding-top: 10px; }
+    padding: 10px 33%; }
 
 .title {
   font-size: 45px;
@@ -155,7 +155,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 50px;
+  padding: 0 60px;
   margin-top: 30px; }
 
 .card {
@@ -229,7 +229,7 @@ header {
   background-color: #ea80fc; }
 
 .block5 {
-  padding: 80px 4%; }
+  padding: 80px 60px; }
   .block5__text {
     margin: 0 30%;
     padding-bottom: 40px;
@@ -286,7 +286,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 80px 4%; }
+  padding: 80px 60px; }
   .block6 .btnGetStarted {
     margin: 50px 0 0 0; }
 
@@ -306,15 +306,39 @@ header {
 .comments {
   width: 50%;
   margin-left: auto; }
+  .comments::before {
+    display: block;
+    content: "";
+    background-image: url("../img/keyboard_arrow_up.png");
+    width: 23px;
+    height: 14px;
+    margin-left: 55%;
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px); }
+  .comments::after {
+    display: block;
+    content: "";
+    background-image: url("../img/keyboard_arrow_down.png");
+    width: 23px;
+    height: 14px;
+    margin-left: 55%;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px); }
+  .comments:hover:before {
+    cursor: pointer; }
+  .comments:hover:after {
+    cursor: pointer; }
 
 .comment {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 30px;
+  padding-bottom: 60px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+  .comment:last-child {
+    padding-bottom: 0px; }
   .comment__avatar {
     margin-right: 25px; }
   .comment__body {
@@ -323,14 +347,52 @@ header {
     -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
             box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
     padding: 25px 25px; }
-  .comment__text {
-    color: #78909c;
-    font-size: 15px;
-    line-height: 1.667; }
   .comment__author {
-    font-size: 18px;
-    font-weight: bold;
     margin-bottom: 10px; }
+
+.block7 {
+  padding: 80px 60px; }
+  .block7__text {
+    margin: 0 30%;
+    padding-bottom: 40px;
+    padding-top: 10px;
+    text-align: center; }
+  .block7 .avatars {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 40px 0 30px 0; }
+    .block7 .avatars__avatar {
+      padding: 0 10px;
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      opacity: 0.4; }
+      .block7 .avatars__avatar-active {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        opacity: 1; }
+        .block7 .avatars__avatar-active:after {
+          position: absolute;
+          display: block;
+          content: "";
+          border: 15px inset transparent;
+          border-radius: 50%;
+          -o-border-image: radial-gradient(transparent 0%, #000000 100%);
+             border-image: radial-gradient(transparent 0%, #000000 100%);
+          border-image-slice: 1;
+          width: 144px;
+          height: 139px;
+          left: 0;
+          top: 0; }
+  .block7 .team__author {
+    text-align: center;
+    padding-bottom: 10px; }
+  .block7 .team__text {
+    text-align: center;
+    margin: 0 33%; }
 
 .font {
   font-family: 'Raleway', sans-serif; }
@@ -342,6 +404,15 @@ header {
 
 .titleColor {
   color: #061e37; }
+
+.commentAuthor {
+  font-size: 18px;
+  font-weight: bold; }
+
+.commentText {
+  color: #78909c;
+  font-size: 15px;
+  line-height: 1.667; }
 
 .wrapper {
   margin: 0 auto;
