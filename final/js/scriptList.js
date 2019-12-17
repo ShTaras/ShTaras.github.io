@@ -1,12 +1,14 @@
-let item = document.querySelectorAll('.item');
+const item = document.querySelectorAll('.item');
 
-let i;
 for(let i=0;i<item.length;i++) {
-    item[i].addEventListener("click", myFunction);
+    item[i].onclick =function () {
+        this.classList.toggle('item-active');
+    }
+
 }
-function myFunction() {
-    this.classList.toggle('item-active');
-}
+
+
+
 
 
 

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/animate.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700&display=swap"
           rel="stylesheet">
+    <link rel="stylesheet" href="css/icofont.min.css">
     <title>Title</title>
 </head>
 <body>
@@ -44,11 +45,15 @@
                 </div>
             </div>
 
+<div class="videoWrap">
+            <video class="videoPlayer"  poster="img/videoplayer.png" width="420" height="240">
+                <!--<img src="img/videoplayer.png" alt="" class="videoPlayer__bgPlayer">-->
+                <source src="video/videoplayback.mp4">
 
-            <object class="videoPlayer">
-                <img src="img/videoplayer.png" alt="" class="videoPlayer__bgPlayer">
 
-            </object>
+            </video>
+            <img class="playButton" src="img/playbutton.png" alt="">
+</div>
         </div>
     </header>
 
@@ -341,26 +346,120 @@
                         <img src="img/avatar3.png">
                     </div>
                     <div class="avatars__avatar avatars__avatar-active">
-                        <img src="img/avatar3.png">
+                        <img src="img/avatar4.jpg">
                     </div>
                     <div class="avatars__avatar">
-                        <img src="img/avatar3.png">
+                        <img src="img/avatar5.jpg">
                     </div>
                 </div>
                 <div class="team__author  commentAuthor titleColor font">Sophie Turner</div>
-                <div class="team__text  commentText font ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur
+                <div class="team__text  commentText font ">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Accusamus aspernatur
                     excepturi expedita explicabo illo iste necessitatibus reiciendis tempore ut, voluptates.
+                </div>
+                <div class="socialLinks">
+                    <a href="#" class="socialLinks__link">
+                        <i class="icofont-twitter"></i>
+                    </a>
+
+                    <a href="#" class="socialLinks__link">
+                        <i class="icofont-facebook"></i>
+                    </a>
+
+                    <a href="#" class="socialLinks__link">
+                        <i class="icofont-linkedin"></i>
+                    </a>
+
+                    <a href="#" class="socialLinks__link">
+                        <i class="icofont-behance"></i>
+                    </a>
+
+                    <a href="#" class="socialLinks__link">
+                        <i class="icofont-dribbble"></i>
+                    </a>
                 </div>
 
             </div>
-            <div class="socialNetworks"></div>
+
+        </div>
+        <div class="block8">
+            <h3 class="block8__title title titleColor font">Contact Us</h3>
+            <p class="block8__text font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis,
+                inventore, magni! Amet, atque autem</p>
+
+            <form action="" method="post" class="contactUs" name="contactUs">
+                <input type="text" name="firstName" placeholder="First name" class="contactUs__input font">
+                <input type="text" name="lastName" placeholder="Last name" class="contactUs__input font">
+                <input type="email" name="email" placeholder="Email" class="contactUs__input font">
+                <input type="tel" name="phone" placeholder="Phone" class="contactUs__input font">
+
+                <textarea class="contactUs__message font" placeholder="Message"></textarea>
+
+                <input type="checkbox" class="contactUs__checkbox" name="checkbox" id="checkbox">
+                <label for="checkbox" class="contactUs__checkboxLabel font">subscribe to the newsletter</label>
+                <input type="submit" name="send" value="SEND" class="contactUs__btnSend button-green button font">
+
+            </form>
+
         </div>
     </main>
+    <footer>
+        <div class="footerNavigation">
+            <div class="logo">
+                <a href="#">
+                    <img src="img/Logo.png" alt="" class="logo__image">
+                </a>
+
+            </div>
+            <nav class="nav">
+                <ul class="nav__mainMenu">
+                    <li class="nav__li font"><a class="nav__link" href="#">Home</a></li>
+                    <li class="nav__li font"><a class="nav__link" href="#">Service</a></li>
+                    <li class="nav__li font"><a class="nav__link" href="#">Extension</a></li>
+                    <li class="nav__li font"><a class="nav__link" href="#">Pricing</a></li>
+                    <li class="nav__li font"><a class="nav__link" href="#">Help</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footerContacts">
+            <div class="footerContacts__policy font">
+                <ul class="footerContacts__list" >
+                    <li class="footerContacts__item"><a href="#">Privacy Policy</a></li>
+                    <li class="footerContacts__item"><a href="#">About Us</a></li>
+                    <li class="footerContacts__item"><a href="#">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="socialLinks">
+                <a href="#" class="socialLinks__link">
+                    <i class="icofont-twitter"></i>
+                </a>
+
+                <a href="#" class="socialLinks__link">
+                    <i class="icofont-facebook"></i>
+                </a>
+
+                <a href="#" class="socialLinks__link">
+                    <i class="icofont-linkedin"></i>
+                </a>
+
+                <a href="#" class="socialLinks__link">
+                    <i class="icofont-behance"></i>
+                </a>
+
+                <a href="#" class="socialLinks__link">
+                    <i class="icofont-dribbble"></i>
+                </a>
+            </div>
+        </div>
+
+    </footer>
 
 
 </div>
 <script src="js/scriptList.js"></script>
 <script src="js/wow.min.js"></script>
+<script src="js/videoPlayer.js"></script>
 <script>
     new WOW(
         {

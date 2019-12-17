@@ -79,7 +79,7 @@ header {
     color: rgb(255, 255, 255);
     line-height: 1.944;
     text-align: left;
-    font-weight: 100;
+    font-weight: 400;
   }
 
 
@@ -162,13 +162,29 @@ header {
 
 
 }
-
+.videoWrap{
+  position: relative;
+  height: 100%;
+  img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
 .videoPlayer {
-  width: 40%;
 
-
+  object-fit: none;
+  border-radius: 3px;
+border: solid 1px rgb(6, 30, 55);;
+position: relative;
   &__bgPlayer {
     width: 100%;
     height: auto;
   }
+
 }
