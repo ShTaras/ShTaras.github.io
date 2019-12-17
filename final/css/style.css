@@ -472,7 +472,11 @@ header {
     border-radius: 5px;
     border: solid 1px #061e37;
     margin: 20px 0;
-    resize: none; }
+    resize: none;
+    outline: none; }
+    .contactUs__message:focus {
+      border: inset 1px #1de9b6;
+      /* Параметры рамки */ }
   .contactUs__btnSend {
     width: 130px;
     height: 50px;
