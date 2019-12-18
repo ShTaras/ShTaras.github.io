@@ -1,9 +1,5 @@
 footer {
   background-color: #061e37;
-  //padding: 80px 60px;
-
-
-
 }
 
 .footerNavigation {
@@ -17,11 +13,13 @@ footer {
     }
   }
 }
-.footerContacts{
+
+.footerContacts {
   display: flex;
   justify-content: space-between;
   padding: 40px 0;
 }
+
 .contacts {
 
   opacity: 0.5;
@@ -55,7 +53,8 @@ footer {
   }
 
 }
-.footerLinks{
+
+.footerLinks {
   margin: 0;
   flex-wrap: wrap;
 }
