@@ -75,7 +75,6 @@ header {
   font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
-  line-height: 1.2;
   text-decoration: none;
   text-align: center;
   border-radius: 5px;
@@ -690,4 +689,5 @@ footer {
 
   .footerLinks {
     margin: 10px auto; } }
+
 /*# sourceMappingURL=style.css.map */
