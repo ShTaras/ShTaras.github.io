@@ -382,8 +382,10 @@ header {
     padding-bottom: 0; }
 
 .blockOurTeam {
-  padding: 80px 60px; }
+  padding: 80px 60px;
+  text-align: center; }
   .blockOurTeam__text {
+    max-width: 500px;
     padding-bottom: 40px;
     padding-top: 10px;
     text-align: center;
@@ -548,10 +550,7 @@ header {
   overflow-x: hidden; }
 
 footer {
-  background-color: #061e37;
-  padding: 80px 60px; }
-  footer .socialLinks {
-    margin: 0; }
+  background-color: #061e37; }
 
 .footerNavigation {
   display: -webkit-box;
@@ -560,7 +559,7 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-bottom: 50px; }
+  padding: 50px 0; }
   .footerNavigation .nav__link:hover {
     color: white; }
 
@@ -570,7 +569,8 @@ footer {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  padding: 40px 0; }
 
 .contacts {
   opacity: 0.5;
@@ -592,6 +592,11 @@ footer {
     .contacts__item:last-child:after {
       display: none; }
 
+.footerLinks {
+  margin: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
 @media all and (max-width: 1045px) {
   .content .headerTextBlock {
     width: 100%; }
@@ -611,11 +616,38 @@ footer {
         -ms-flex-direction: column;
             flex-direction: column; }
   .blockComments .comments {
-    width: 100%; } }
+    width: 100%; }
+
+  .footerContacts {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+
+  .footerLogo {
+    margin: 10px 0; }
+
+  .police {
+    text-align: center; }
+
+  .videoWrap {
+    margin: 0 auto; } }
 @media all and (max-width: 545px) {
   .navigation {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
+
+  .nav {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1; }
+
+  .avatars {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
 
   .blockCards {
     -webkit-box-align: center;
@@ -656,10 +688,7 @@ footer {
   .item__img {
     margin: 0 auto; }
 
-  .socialLinks {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; } }
+  .footerLinks {
+    margin: 10px auto; } }
 
 /*# sourceMappingURL=style.css.map */

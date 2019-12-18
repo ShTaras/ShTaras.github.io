@@ -1,17 +1,15 @@
 footer {
   background-color: #061e37;
-  padding: 80px 60px;
+  //padding: 80px 60px;
 
-  .socialLinks {
-    margin: 0;
-  }
+
 
 }
 
 .footerNavigation {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 50px;
+  padding: 50px 0;
 
   .nav__link {
     &:hover {
@@ -22,6 +20,7 @@ footer {
 .footerContacts{
   display: flex;
   justify-content: space-between;
+  padding: 40px 0;
 }
 .contacts {
 
@@ -55,4 +54,8 @@ footer {
     }
   }
 
+}
+.footerLinks{
+  margin: 0;
+  flex-wrap: wrap;
 }

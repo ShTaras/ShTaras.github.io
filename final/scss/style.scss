@@ -33,6 +33,19 @@
       width: 100%;
     }
   }
+  .footerContacts {
+    flex-wrap: wrap;
+  }
+
+  .footerLogo{
+    margin: 10px 0;
+  }
+  .police{
+    text-align: center;
+  }
+  .videoWrap{
+    margin: 0 auto;
+  }
 }
 
 
@@ -40,7 +53,13 @@
   .navigation {
     flex-wrap: wrap;
   }
-
+  .nav{
+    order:1;
+  }
+  .avatars {
+    flex-direction: column;
+    align-items: center;
+  }
   .blockCards {
     align-items: center;
   }
@@ -74,9 +93,9 @@
     margin: 0 auto;
   }
 
-  .socialLinks {
-    flex-direction: column;
-
+  .footerLinks{
+    margin: 10px auto;
   }
+
 }
 

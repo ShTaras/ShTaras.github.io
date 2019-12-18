@@ -15,18 +15,6 @@ for (let i = 0; i < teamMember.length; i++) {
         }
         this.classList.add('teamMember-active');
 
-
-
-
-
-
-
-
     }
-
-
-
-
-
 }
 

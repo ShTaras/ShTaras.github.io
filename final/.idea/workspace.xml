@@ -29,7 +29,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/homeWork3.3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
@@ -66,6 +66,7 @@
       <workItem from="1576261703828" duration="281000" />
       <workItem from="1576580131289" duration="35869000" />
       <workItem from="1576658891055" duration="18857000" />
+      <workItem from="1576685438016" duration="2146000" />
     </task>
     <servers />
   </component>
