@@ -3,44 +3,80 @@
 @import "main";
 @import "font";
 
-.container{
- max-width: 1440px;
+.container {
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 25px;
-  //overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 
 @import "footer";
 @media all and (max-width: 1045px) {
- .content {
-  flex-direction: column;
- }
+  .content {
+    .headerTextBlock {
+      width: 100%;
+    }
+  }
+  .btnTryForFree {
+    margin: 10px 0 0 0;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .blockComments {
+    .container {
+      flex-direction: column;
+    }
 
+    .comments {
+      width: 100%;
+    }
+  }
 }
 
 
-@media all and (max-width: 500px) {
- .navigation{
-  flex-wrap: wrap;
- }
+@media all and (max-width: 545px) {
+  .navigation {
+    flex-wrap: wrap;
+  }
 
- .btnTryForFree{
-  margin: 10px 0 0 0;
- }
- .content{
-  
-  .headerTextBlock{
-   width: 100%;
+  .blockCards {
+    align-items: center;
   }
- }
- .blockCards{
-  flex-direction: column;
- }
- .blockRectangles{
-  flex-direction: column;
-  .rectangle{
-   width: 100%;
+
+
+  .videoWrap {
+    width: 100%;
+
+    video {
+      width: 100%;
+    }
   }
- }
+  .blockCards {
+    flex-direction: column;
+  }
+  .blockRectangles {
+    flex-direction: column;
+
+    .rectangle {
+      width: 100%;
+    }
+  }
+  .footerNavigation {
+    flex-direction: column;
+  }
+
+  .item__content {
+    flex-direction: column;
+  }
+  .item__img {
+    margin: 0 auto;
+  }
+
+  .socialLinks {
+    flex-direction: column;
+
+  }
 }
+

@@ -115,7 +115,8 @@ header {
     transition: 0.7s; }
 
 .buttons {
-  margin-top: 20px; }
+  margin-top: 20px;
+  margin-bottom: 20px; }
 
 .btnBuyNow {
   color: #061e37;
@@ -133,7 +134,6 @@ header {
 .videoWrap {
   position: relative;
   height: 100%;
-  width: 45%;
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content; }
@@ -403,7 +403,7 @@ header {
           transform: scale(0.6);
   opacity: 0.4;
   width: 160px;
-  height: 160px; }
+  height: auto; }
   .teamMember .teamMember__img {
     width: 100%;
     height: auto;
@@ -544,7 +544,8 @@ header {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 25px; }
+  padding: 0 25px;
+  overflow-x: hidden; }
 
 footer {
   background-color: #061e37;
@@ -592,21 +593,39 @@ footer {
       display: none; }
 
 @media all and (max-width: 1045px) {
-  .content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; } }
-@media all and (max-width: 500px) {
-  .navigation {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
+  .content .headerTextBlock {
+    width: 100%; }
 
   .btnTryForFree {
     margin: 10px 0 0 0; }
 
-  .content .headerTextBlock {
+  .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+
+  .blockComments .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .blockComments .comments {
+    width: 100%; } }
+@media all and (max-width: 545px) {
+  .navigation {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+
+  .blockCards {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+
+  .videoWrap {
     width: 100%; }
+    .videoWrap video {
+      width: 100%; }
 
   .blockCards {
     -webkit-box-orient: vertical;
@@ -620,6 +639,27 @@ footer {
         -ms-flex-direction: column;
             flex-direction: column; }
     .blockRectangles .rectangle {
-      width: 100%; } }
+      width: 100%; }
+
+  .footerNavigation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+
+  .item__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+
+  .item__img {
+    margin: 0 auto; }
+
+  .socialLinks {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; } }
 
 /*# sourceMappingURL=style.css.map */
