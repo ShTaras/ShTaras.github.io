@@ -2,7 +2,7 @@ header {
   background-image: url("../img/bg.png");
   position: relative;
   background-size: cover;
-  padding: 30px 60px;
+  //padding: 30px 60px;
 }
 
 
@@ -48,22 +48,25 @@ header {
 
 .navigation {
   display: flex;
-  //position: absolute;
   justify-content: space-between;
- // padding: px 0;
+
+  padding-top: 60px;
 }
 
 
 
 .content {
+
   display: flex;
   justify-content: space-between;
-  padding: 100px 0;
+  padding: 160px 0;
 }
 
-.textBlock {
+.headerTextBlock {
   width: 45%;
-  // min-width: 350px;
+  // min-width: 350px;display: flex;
+  justify-content: space-between;
+ // padding: 100px 0;
 
   &__title {
     font-size: 38pt;
@@ -165,6 +168,8 @@ header {
 .videoWrap{
   position: relative;
   height: 100%;
+  width: 45%;
+  max-width: max-content;
   img{
     position: absolute;
     top: 50%;
@@ -178,10 +183,9 @@ header {
 }
 .videoPlayer {
 
-  object-fit: none;
-  border-radius: 3px;
-border: solid 1px rgb(6, 30, 55);;
-position: relative;
+  //object-fit: none;
+  //border-radius: 3px;
+ // border: solid 1px rgb(6, 30, 55);
   &__bgPlayer {
     width: 100%;
     height: auto;

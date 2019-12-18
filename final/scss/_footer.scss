@@ -19,10 +19,12 @@ footer {
     }
   }
 }
-
-.footerContacts {
+.footerContacts{
   display: flex;
   justify-content: space-between;
+}
+.contacts {
+
   opacity: 0.5;
 
   font-size: 15px;

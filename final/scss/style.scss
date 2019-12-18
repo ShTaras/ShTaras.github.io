@@ -3,11 +3,44 @@
 @import "main";
 @import "font";
 
-.wrapper{
- // max-width: 1280px;
+.container{
+ max-width: 1440px;
   margin: 0 auto;
-  overflow-x: hidden;
+  padding: 0 25px;
+  //overflow-x: hidden;
 }
 
 
 @import "footer";
+@media all and (max-width: 1045px) {
+ .content {
+  flex-direction: column;
+ }
+
+}
+
+
+@media all and (max-width: 500px) {
+ .navigation{
+  flex-wrap: wrap;
+ }
+
+ .btnTryForFree{
+  margin: 10px 0 0 0;
+ }
+ .content{
+  
+  .headerTextBlock{
+   width: 100%;
+  }
+ }
+ .blockCards{
+  flex-direction: column;
+ }
+ .blockRectangles{
+  flex-direction: column;
+  .rectangle{
+   width: 100%;
+  }
+ }
+}
