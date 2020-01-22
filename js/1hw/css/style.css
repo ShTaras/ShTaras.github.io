@@ -79,4 +79,32 @@
 .task-empty {
   display: none; }
 
+.deleteWindow {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  height: 120px;
+  background-color: #eeeeee; }
+  .deleteWindow__notice {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: sans-serif; }
+  .deleteWindow__btnYn {
+    background-color: inherit;
+    width: 80px;
+    height: 30px;
+    margin-top: 20px;
+    color: #0097f4;
+    border: none; }
+    .deleteWindow__btnYn:nth-child(2) {
+      margin-left: 35px; }
+    .deleteWindow__btnYn:hover {
+      background-color: #0097f4;
+      color: white; }
+
 /*# sourceMappingURL=style.css.map */
