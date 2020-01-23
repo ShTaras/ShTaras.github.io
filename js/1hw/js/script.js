@@ -6,7 +6,7 @@ let btnAdd = document.getElementById('btnAdd');
 btnAdd.addEventListener("click", addTask);
 
 
-if (localStorage.getItem('todo') != undefined) {
+if (!(localStorage.getItem(`todo`) == undefined)) {
     loadTasks();
     print();
 }
@@ -17,9 +17,17 @@ function loadTasks() {
 }
 
 function addTask() {
-    initTask();
-    save();
-    print();
+    if (isNotEmpty()) {
+        initTask();
+        saveNew();
+        print();
+    } else
+        alert('Task is empty');
+
+}
+
+function isNotEmpty() {
+    return inputTask.value !== '';
 }
 
 function initDate() {
@@ -53,15 +61,18 @@ function initTask() {
     inputTask.value = "";
 }
 
-function save() {
+function saveNew() {
     todoList[todoList.length] = taskTemp;
+    localStorage.setItem('todo', JSON.stringify(todoList));
+}
+
+function saveAll() {
     localStorage.setItem('todo', JSON.stringify(todoList));
 }
 
 function createID() {
     let date = new Date();
-    let id = `f${(+date).toString(16)}`;
-    return id;
+    return `f${(+date).toString(16)}`;
 }
 
 function print() {
@@ -75,14 +86,14 @@ function print() {
             newTask.querySelector('.task__date').innerHTML = todoList[i].dateInfo
             newTask.querySelector('.task__time').innerHTML = todoList[i].timeInfo;
             newTask.querySelector('.task__importance').innerHTML = todoList[i].importance;
-            newTask.querySelector('.task__text').innerHTML = todoList[i].taskText;
+            newTask.querySelector('.task__text').innerHTML = '<p>' + todoList[i].taskText + '</p>'
             newTask.id = todoList[i].taskID;
             if (todoList[i].check === true) {
                 newTask.classList.add('task-complete');
             }
         }
         newTask.classList.remove('task-empty');
-        document.getElementById('todoList').appendChild(newTask);
+        document.getElementById('tasks').appendChild(newTask);
         //newTask.addEventListener("click", changeStatus);
 
         addBtnEvent(newTask);
@@ -92,24 +103,40 @@ function print() {
 
 function addBtnEvent(newTask) {
     newTask.addEventListener("click", changeStatus);
-    newTask.addEventListener("click", showDltMsg);
 }
 
-function deleteTask() {
-
-    let target = event.target;
-    if (target.className === 'task__btnDelete') {
-        for (let i = 0; i < todoList.length; i++) {
-            if (todoList[i].taskID === this.id) {
-                todoList.splice(i, 1);
-            }
+function deleteTask(taskID) {
+    for (let i = 0; i < todoList.length; i++) {
+        if (todoList[i].taskID === taskID) {
+            todoList.splice(i, 1);
         }
     }
-    localStorage.setItem('todo', JSON.stringify(todoList));
+    saveAll();
     print();
 }
 
-function showDltMsg() {
+function checkTask(taskID) {
+    for (let i = 0; i < todoList.length; i++) {
+        if (todoList[i].taskID === taskID) {
+            todoList[i].check = true;
+        }
+    }
+    saveAll();
+    print();
+}
+
+function editTask(taskID, newTaskText) {
+
+    for (let i = 0; i < todoList.length; i++) {
+        if (todoList[i].taskID === taskID) {
+            todoList[i].taskText = newTaskText;
+        }
+    }
+    saveAll();
+    print();
+}
+
+function showDltMsg(taskID) {
     let DltMsg = {
         todo: document.getElementById('todoList'),
         window: document.createElement('div'),
@@ -140,10 +167,53 @@ function showDltMsg() {
 
     DltMsg.btnNo.addEventListener('click', DltMsg.close);
     DltMsg.btnYes.addEventListener('click', function () {
-        deleteTask();
+        deleteTask(taskID);
         DltMsg.close();
     });
+}
 
+function showEditWindow(taskID) {
+    let editWindow = {
+        todo: document.getElementById('todoList'),
+        window: document.createElement('div'),
+        textArea: document.createElement('textarea'),
+        btnCancel: document.createElement('button'),
+        btnSave: document.createElement('button'),
+        close: function () {
+            editWindow.todo.style.opacity = '1';
+            editWindow.todo.style.pointerEvents = 'All';
+            document.body.removeChild(editWindow.window);
+        }
+    }
+    editWindow.window.className = 'editWindow';
+
+    editWindow.btnCancel.className = 'editWindow__btnCancel';
+    editWindow.btnCancel.innerHTML = 'CANCEL';
+
+    editWindow.btnSave.className = 'editWindow__btnSave';
+    editWindow.btnSave.innerHTML = 'SAVE';
+
+    editWindow.textArea.className = 'editWindow__newTextTask';
+    editWindow.textArea.innerHTML = '';
+    editWindow.textArea.placeholder = 'New text of todo item';
+
+
+    editWindow.todo.style.opacity = '0.5';
+    editWindow.todo.style.pointerEvents = 'none';
+
+    document.body.appendChild(editWindow.window);
+    editWindow.window.innerHTML = '<p class="editWindow__notice">Edit text</p>';
+    editWindow.window.appendChild(editWindow.textArea);
+    editWindow.window.appendChild(editWindow.btnCancel);
+    editWindow.window.appendChild(editWindow.btnSave);
+
+
+    editWindow.btnCancel.addEventListener('click', editWindow.close);
+    editWindow.btnSave.addEventListener('click', function () {
+        let newTaskText = editWindow.textArea.value;
+        editTask(taskID, newTaskText);
+        editWindow.close();
+    })
 
 }
 
@@ -153,16 +223,21 @@ function showDltMsg() {
 // }
 
 function changeStatus() {
-
+    let taskID = this.id;
     let target = event.target;
-    if (target.className === 'task__btnCheck') {
-        for (let i = 0; i < todoList.length; i++) {
-            if (todoList[i].taskID === this.id) {
-                todoList[i].check = true;
-            }
-        }
+
+    switch (target.className) {
+        case 'task__btnCheck':
+            checkTask(taskID);
+            break;
+        case 'task__btnDelete':
+            showDltMsg(taskID);
+            break;
+        case 'task__btnEdit':
+            showEditWindow(taskID);
+            break;
+        default:
+            break;
     }
-    localStorage.setItem('todo', JSON.stringify(todoList));
-    print();
 }
 

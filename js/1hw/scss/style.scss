@@ -59,15 +59,16 @@
   padding: 15px;
 
   &__info {
-    padding: 10px;
+    padding: 0 10px;
   }
 
   &__importance {
     background-color: #717171;
-    margin: 10px;
+    margin-top: 6px;
     width: 50px;
+    height: 35px;
     font-size: 20px;
-    line-height: 40px;
+    line-height: 35px;
     color: white;
     text-align: center;
   }
@@ -81,9 +82,12 @@
   }
 
   &__text {
-    padding: 10px;
-
-    width: 650px;
+    padding: 15px;
+    margin: auto;
+    word-wrap: break-word;
+    max-width: 630px;
+    width: 100%;
+    word-break: break-all;
     background-color: #eeeeee;
   }
 
@@ -94,10 +98,11 @@
   }
 
   &__buttons {
+    height: max-content;
     align-items: center;
     display: flex;
     flex-direction: row;
-    margin-left: auto;
+    margin: 0 5px;
   }
 
 }
@@ -122,7 +127,6 @@
   z-index: 10;
   top: 50%;
   left: 50%;
-  margin-right: -50%;
   transform: translate(-50%, -50%);
   width: 230px;
   height: 120px;
@@ -136,15 +140,72 @@
   }
 
   &__btnYn {
-    &:nth-child(2){
+    &:nth-child(2) {
       margin-left: 35px;
     }
+
+    font-weight: 600;
     background-color: inherit;
     width: 80px;
     height: 30px;
     margin-top: 20px;
     color: #0097f4;
     border: none;
+
+    &:hover {
+      background-color: #0097f4;
+      color: white;
+    }
+  }
+
+}
+
+.editWindow {
+  position: absolute;
+  padding: 0 15px;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 240px;
+  background-color: #eeeeee;
+
+  &__notice {
+    text-align: center;
+    margin: 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+  }
+
+  &__newTextTask {
+    resize: none;
+    width: 100%;
+    height: 160px;
+    font-size: 16px;
+  }
+
+  &__btnCancel {
+    background-color: inherit;
+    width: 49%;
+    height: 30px;
+    color: #0097f4;
+    border: none;
+    font-weight: 600;
+
+    &:hover {
+      background-color: #0097f4;
+      color: white;
+    }
+  }
+
+  &__btnSave {
+    background-color: inherit;
+    width: 49%;
+    height: 30px;
+    color: #0097f4;
+    border: none;
+    font-weight: 600;
 
     &:hover {
       background-color: #0097f4;
