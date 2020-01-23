@@ -29,30 +29,43 @@ function isNotEmpty() {
     return inputTask.value !== '';
 }
 
-function initDate() {
-    let date = new Date();
-    let taskDate = {};
-    taskDate.day = date.getDay();
-    taskDate.month = date.getMonth() + 1;
-    taskDate.year = date.getFullYear();
-    taskDate.hours = date.getHours();
-    taskDate.minutes = date.getMinutes();
+// function initDate() {
+//     let date = new Date();
+//     let taskDate = {};
+//     taskDate.day = date.getDay();
+//     taskDate.month = date.getMonth() + 1;
+//     taskDate.year = date.getFullYear();
+//
+//
+//     if (taskDate.day < 10) taskDate.day = '0' + taskDate.day;
+//     if (taskDate.month < 10) taskDate.month = '0' + taskDate.month;
+//
+//
+//     return taskDate;
+// }
+function timeToPrint(task) {
+    let hours = new Date(task.date).getHours(),
+        minutes = new Date(task.date).getHours();
+    if (hours < 10) hours = '0' + hours;
+    if (minutes < 10) minutes = '0' + minutes;
+    return hours + ':' + minutes;
 
-    if (taskDate.day < 10) taskDate.day = '0' + taskDate.day;
-    if (taskDate.month < 10) taskDate.month = '0' + taskDate.month;
-    if (taskDate.hours < 10) taskDate.hours = '0' + taskDate.hours;
-    if (taskDate.minutes < 10) taskDate.minutes = '0' + taskDate.minutes;
-
-    return taskDate;
 }
+
+function dateToPrint(task) {
+    let day=new Date(task.date).getDay(),
+        month=new Date(task.date).getMonth();
+    if (day < 10) day = ('0' + day);
+    if (month < 10) month = '0' +(month + 1);
+    return day + '.' + month + '.' + new Date(task.date).getFullYear();
+}
+
+
 
 function initTask() {
 
-    let taskDate = initDate();
     taskTemp = {
-
-        dateInfo: taskDate.day + '.' + taskDate.month + '.' + taskDate.year,
-        timeInfo: taskDate.hours + ':' + taskDate.minutes,
+        date: new Date(),
         importance: 1,
         taskText: inputTask.value,
         check: false,
@@ -62,7 +75,7 @@ function initTask() {
 }
 
 function saveNew() {
-    todoList.push(taskTemp);
+    todoList.unshift(taskTemp);
     localStorage.setItem('todo', JSON.stringify(todoList));
 }
 
@@ -80,11 +93,12 @@ function print() {
     for (let i = 1; i < oldTasks.length; i++) {
         oldTasks[i].remove();
     }
-    for (let i = todoList.length - 1; i >= 0; i--) {
+    for (let i = 0; i < todoList.length; i++) {
         let newTask = document.querySelector('.task-empty').cloneNode(true);
         for (let key in todoList[i]) {
-            newTask.querySelector('.task__date').innerHTML = todoList[i].dateInfo
-            newTask.querySelector('.task__time').innerHTML = todoList[i].timeInfo;
+
+             newTask.querySelector('.task__date').innerHTML = dateToPrint(todoList[i]);
+            newTask.querySelector('.task__time').innerHTML = timeToPrint(todoList[i]);
             newTask.querySelector('.task__importance').innerHTML = todoList[i].importance;
             newTask.querySelector('.task__text').innerHTML = '<p>' + todoList[i].taskText + '</p>'
             newTask.id = todoList[i].taskID;
