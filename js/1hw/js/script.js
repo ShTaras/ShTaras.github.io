@@ -6,7 +6,7 @@ let btnAdd = document.getElementById('btnAdd');
 btnAdd.addEventListener("click", addTask);
 
 
-if (!(localStorage.getItem(`todo`) == undefined)) {
+if (!(localStorage.getItem(`todo`) === null)) {
     loadTasks();
     print();
 }
@@ -23,7 +23,6 @@ function addTask() {
         print();
     } else
         alert('Task is empty');
-
 }
 
 function isNotEmpty() {
@@ -49,20 +48,21 @@ function initDate() {
 
 function initTask() {
 
-
     let taskDate = initDate();
-    taskTemp = {};
-    taskTemp.dateInfo = taskDate.day + '.' + taskDate.month + '.' + taskDate.year;
-    taskTemp.timeInfo = taskDate.hours + ':' + taskDate.minutes;
-    taskTemp.importance = 1;
-    taskTemp.taskText = inputTask.value;
-    taskTemp.check = false;
-    taskTemp.taskID = createID();
+    taskTemp = {
+
+        dateInfo: taskDate.day + '.' + taskDate.month + '.' + taskDate.year,
+        timeInfo: taskDate.hours + ':' + taskDate.minutes,
+        importance: 1,
+        taskText: inputTask.value,
+        check: false,
+        taskID: createID()
+    };
     inputTask.value = "";
 }
 
 function saveNew() {
-    todoList[todoList.length] = taskTemp;
+    todoList.push(taskTemp);
     localStorage.setItem('todo', JSON.stringify(todoList));
 }
 
@@ -80,7 +80,7 @@ function print() {
     for (let i = 1; i < oldTasks.length; i++) {
         oldTasks[i].remove();
     }
-    for (let i = 0; i < todoList.length; i++) {
+    for (let i = todoList.length - 1; i >= 0; i--) {
         let newTask = document.querySelector('.task-empty').cloneNode(true);
         for (let key in todoList[i]) {
             newTask.querySelector('.task__date').innerHTML = todoList[i].dateInfo
@@ -96,14 +96,12 @@ function print() {
         document.getElementById('tasks').appendChild(newTask);
         //newTask.addEventListener("click", changeStatus);
 
-        addBtnEvent(newTask);
+        newTask.addEventListener("click", changeStatus);
+
     }
 
 }
 
-function addBtnEvent(newTask) {
-    newTask.addEventListener("click", changeStatus);
-}
 
 function deleteTask(taskID) {
     for (let i = 0; i < todoList.length; i++) {
@@ -118,7 +116,7 @@ function deleteTask(taskID) {
 function checkTask(taskID) {
     for (let i = 0; i < todoList.length; i++) {
         if (todoList[i].taskID === taskID) {
-            todoList[i].check = true;
+            todoList[i].check = todoList[i].check !== true;
         }
     }
     saveAll();
@@ -148,7 +146,6 @@ function showDltMsg(taskID) {
             document.body.removeChild(DltMsg.window);
         }
     }
-
 
     DltMsg.window.className = 'deleteWindow';
     DltMsg.btnNo.className = 'deleteWindow__btnYn';

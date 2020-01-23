@@ -38,6 +38,33 @@
     font-weight: bold;
     border-radius: 5px;
     margin-left: auto; }
+  .todoList__sort {
+    display: flex;
+    flex-direction: row;
+    padding: 15px; }
+  .todoList__find {
+    height: 35px;
+    width: 630px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #9c9c9c;
+    outline: none;
+    background-image: url(../img/searchicon.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding: 10px 5px 10px 20px;
+    text-indent: 20px;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 2s;
+    transition: all 0.2s; }
+  .todoList__sortPriority {
+    width: 30px;
+    margin-right: 10px; }
+  .todoList__sortDate {
+    width: 30px;
+    margin: 0 45px; }
 
 .task {
   display: flex;
@@ -53,7 +80,8 @@
     font-size: 20px;
     line-height: 35px;
     color: white;
-    text-align: center; }
+    text-align: center;
+    margin-right: 10px; }
   .task__date {
     font-size: 20px; }
   .task__time {
@@ -86,7 +114,7 @@
   display: none; }
 
 .deleteWindow {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   top: 50%;
   left: 50%;
@@ -114,7 +142,7 @@
       color: white; }
 
 .editWindow {
-  position: absolute;
+  position: fixed;
   padding: 0 15px;
   z-index: 10;
   top: 50%;
