@@ -4,11 +4,16 @@ let todoList = [];
 let inputTask = document.getElementById('taskText');
 let btnAdd = document.getElementById('btnAdd');
 btnAdd.addEventListener("click", addTask);
+document.addEventListener("keypress", function (event) {
+    if (event.keyCode === 13) {
+        addTask();
+    }
+});
 
 
 if (!(localStorage.getItem(`todo`) === null)) {
     loadTasks();
-    print();
+    todoList.forEach(printTask);
 }
 
 
@@ -17,35 +22,16 @@ function loadTasks() {
 }
 
 function addTask() {
-    if (isNotEmpty()) {
+    if (inputTask.value !== '') {
         initTask();
         saveNew();
-        print();
     } else
         alert('Task is empty');
 }
 
-function isNotEmpty() {
-    return inputTask.value !== '';
-}
-
-// function initDate() {
-//     let date = new Date();
-//     let taskDate = {};
-//     taskDate.day = date.getDay();
-//     taskDate.month = date.getMonth() + 1;
-//     taskDate.year = date.getFullYear();
-//
-//
-//     if (taskDate.day < 10) taskDate.day = '0' + taskDate.day;
-//     if (taskDate.month < 10) taskDate.month = '0' + taskDate.month;
-//
-//
-//     return taskDate;
-// }
 function timeToPrint(task) {
     let hours = new Date(task.date).getHours(),
-        minutes = new Date(task.date).getHours();
+        minutes = new Date(task.date).getMinutes();
     if (hours < 10) hours = '0' + hours;
     if (minutes < 10) minutes = '0' + minutes;
     return hours + ':' + minutes;
@@ -53,17 +39,14 @@ function timeToPrint(task) {
 }
 
 function dateToPrint(task) {
-    let day=new Date(task.date).getDay(),
-        month=new Date(task.date).getMonth();
+    let day = new Date(task.date).getDay(),
+        month = new Date(task.date).getMonth();
     if (day < 10) day = ('0' + day);
-    if (month < 10) month = '0' +(month + 1);
+    if (month < 10) month = '0' + (month + 1);
     return day + '.' + month + '.' + new Date(task.date).getFullYear();
 }
 
-
-
 function initTask() {
-
     taskTemp = {
         date: new Date(),
         importance: 1,
@@ -75,7 +58,7 @@ function initTask() {
 }
 
 function saveNew() {
-    todoList.unshift(taskTemp);
+    printTask(todoList[todoList.push(taskTemp) - 1]);
     localStorage.setItem('todo', JSON.stringify(todoList));
 }
 
@@ -88,69 +71,81 @@ function createID() {
     return `f${(+date).toString(16)}`;
 }
 
-function print() {
-    let oldTasks = document.querySelectorAll('.task');
-    for (let i = 1; i < oldTasks.length; i++) {
-        oldTasks[i].remove();
-    }
-    for (let i = 0; i < todoList.length; i++) {
-        let newTask = document.querySelector('.task-empty').cloneNode(true);
-        for (let key in todoList[i]) {
+function printTask(item) {
 
-             newTask.querySelector('.task__date').innerHTML = dateToPrint(todoList[i]);
-            newTask.querySelector('.task__time').innerHTML = timeToPrint(todoList[i]);
-            newTask.querySelector('.task__importance').innerHTML = todoList[i].importance;
-            newTask.querySelector('.task__text').innerHTML = '<p>' + todoList[i].taskText + '</p>'
-            newTask.id = todoList[i].taskID;
-            if (todoList[i].check === true) {
-                newTask.classList.add('task-complete');
-            }
-        }
-        newTask.classList.remove('task-empty');
-        document.getElementById('tasks').appendChild(newTask);
-        //newTask.addEventListener("click", changeStatus);
-
-        newTask.addEventListener("click", changeStatus);
-
+    let newTask = document.querySelector('.task-empty').cloneNode(true);
+    let tasks = document.getElementById('tasks');
+    newTask.querySelector('.task__date').innerHTML = dateToPrint(item);
+    newTask.querySelector('.task__time').innerHTML = timeToPrint(item);
+    newTask.querySelector('.task__importance').innerHTML = item.importance;
+    newTask.querySelector('.task__text').innerHTML = '<p>' + item.taskText + '</p>'
+    newTask.id = item.taskID;
+    if (item.check === true) {
+        newTask.classList.add('task-complete');
     }
 
+    newTask.classList.remove('task-empty');
+    tasks.insertBefore(newTask, tasks.firstChild);
+    newTask.addEventListener("click", changeStatus);
 }
 
-
 function deleteTask(taskID) {
-    for (let i = 0; i < todoList.length; i++) {
-        if (todoList[i].taskID === taskID) {
-            todoList.splice(i, 1);
+    let index = todoList.findIndex(function (element) {
+        if (element.taskID === taskID) {
+            return true;
         }
-    }
+    });
+    todoList.splice(index, 1);
+    document.getElementById('tasks').removeChild(document.getElementById(taskID));
     saveAll();
-    print();
+
 }
 
 function checkTask(taskID) {
-    for (let i = 0; i < todoList.length; i++) {
-        if (todoList[i].taskID === taskID) {
-            todoList[i].check = todoList[i].check !== true;
+    todoList.find(function (index) {
+            if (index.taskID === taskID) {
+                index.check = index.check !== true;
+            }
         }
-    }
+    );
+    document.getElementById(taskID).classList.toggle('task-complete');
     saveAll();
-    print();
 }
 
 function editTask(taskID, newTaskText) {
-
-    for (let i = 0; i < todoList.length; i++) {
-        if (todoList[i].taskID === taskID) {
-            todoList[i].taskText = newTaskText;
+    todoList.find(function (element) {
+            if (element.taskID === taskID) {
+                element.taskText = newTaskText;
+                let task = document.getElementById(taskID);
+                console.log(task);
+                task.querySelector('.task__text').innerHTML = newTaskText;
+            }
         }
-    }
+    );
     saveAll();
-    print();
+}
+
+function changeStatus() {
+    let taskID = this.id;
+    let target = event.target;
+
+    switch (target.className) {
+        case 'task__btnCheck':
+            checkTask(taskID);
+            break;
+        case 'task__btnDelete':
+            showDltMsg(taskID);
+            break;
+        case 'task__btnEdit':
+            showEditWindow(taskID);
+            break;
+        default:
+            break;
+    }
 }
 
 function showDltMsg(taskID) {
     let DltMsg = {
-        todo: document.getElementById('todoList'),
         window: document.createElement('div'),
         btnYes: document.createElement('button'),
         btnNo: document.createElement('button'),
@@ -160,6 +155,7 @@ function showDltMsg(taskID) {
             document.body.removeChild(DltMsg.window);
         }
     }
+    DltMsg.todo = document.getElementById('todoList')
 
     DltMsg.window.className = 'deleteWindow';
     DltMsg.btnNo.className = 'deleteWindow__btnYn';
@@ -174,7 +170,6 @@ function showDltMsg(taskID) {
     DltMsg.window.innerHTML = '<p class="deleteWindow__notice">Delete item?</p>';
     DltMsg.window.appendChild(DltMsg.btnNo);
     DltMsg.window.appendChild(DltMsg.btnYes);
-
 
     DltMsg.btnNo.addEventListener('click', DltMsg.close);
     DltMsg.btnYes.addEventListener('click', function () {
@@ -208,7 +203,6 @@ function showEditWindow(taskID) {
     editWindow.textArea.innerHTML = '';
     editWindow.textArea.placeholder = 'New text of todo item';
 
-
     editWindow.todo.style.opacity = '0.5';
     editWindow.todo.style.pointerEvents = 'none';
 
@@ -217,7 +211,6 @@ function showEditWindow(taskID) {
     editWindow.window.appendChild(editWindow.textArea);
     editWindow.window.appendChild(editWindow.btnCancel);
     editWindow.window.appendChild(editWindow.btnSave);
-
 
     editWindow.btnCancel.addEventListener('click', editWindow.close);
     editWindow.btnSave.addEventListener('click', function () {
@@ -228,27 +221,5 @@ function showEditWindow(taskID) {
 
 }
 
-// function closeDltMsg(DltMsg) {
-//
-//
-// }
 
-function changeStatus() {
-    let taskID = this.id;
-    let target = event.target;
-
-    switch (target.className) {
-        case 'task__btnCheck':
-            checkTask(taskID);
-            break;
-        case 'task__btnDelete':
-            showDltMsg(taskID);
-            break;
-        case 'task__btnEdit':
-            showEditWindow(taskID);
-            break;
-        default:
-            break;
-    }
-}
 

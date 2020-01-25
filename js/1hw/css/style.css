@@ -21,7 +21,7 @@
     display: flex;
     padding: 10px; }
   .todoList__taskText {
-    margin-left: 160px;
+    margin-left: 12%;
     height: 35px;
     width: 680px;
     border-top: 0;
@@ -38,13 +38,16 @@
     font-weight: bold;
     border-radius: 5px;
     margin-left: auto; }
+    .todoList__btnAdd:hover {
+      cursor: pointer; }
   .todoList__sort {
     display: flex;
     flex-direction: row;
-    padding: 15px; }
+    padding: 15px 15px 0; }
   .todoList__find {
     height: 35px;
-    width: 630px;
+    width: 660px;
+    margin: 0 8px;
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -55,33 +58,35 @@
     background-repeat: no-repeat;
     background-size: 20px 20px;
     padding: 10px 5px 10px 20px;
-    text-indent: 20px;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 2s;
-    transition: all 0.2s; }
+    text-indent: 20px; }
+  .todoList__x {
+    width: 36px;
+    height: 36px;
+    margin: 0 55px; }
   .todoList__sortPriority {
     width: 30px;
-    margin-right: 10px; }
+    margin: 0 21px; }
   .todoList__sortDate {
     width: 30px;
-    margin: 0 45px; }
+    margin: 0 35px; }
 
 .task {
   display: flex;
   flex-direction: row;
   padding: 15px; }
   .task__info {
-    padding: 0 10px; }
+    margin: auto 0; }
   .task__importance {
     background-color: #717171;
-    margin-top: 6px;
     width: 50px;
     height: 35px;
     font-size: 20px;
     line-height: 35px;
     color: white;
     text-align: center;
-    margin-right: 10px; }
+    margin: auto 10px; }
+    .task__importance:hover {
+      cursor: pointer; }
   .task__date {
     font-size: 20px; }
   .task__time {
@@ -104,6 +109,12 @@
     display: flex;
     flex-direction: row;
     margin: 0 5px; }
+  .task__btnEdit:hover {
+    cursor: pointer; }
+  .task__btnCheck:hover {
+    cursor: pointer; }
+  .task__btnDelete:hover {
+    cursor: pointer; }
 
 .task-complete .task__text {
   background-color: #d1eef4; }
@@ -139,7 +150,8 @@
       margin-left: 35px; }
     .deleteWindow__btnYn:hover {
       background-color: #0097f4;
-      color: white; }
+      color: white;
+      cursor: pointer; }
 
 .editWindow {
   position: fixed;
@@ -170,7 +182,8 @@
     font-weight: 600; }
     .editWindow__btnCancel:hover {
       background-color: #0097f4;
-      color: white; }
+      color: white;
+      cursor: pointer; }
   .editWindow__btnSave {
     background-color: inherit;
     width: 49%;
@@ -180,6 +193,7 @@
     font-weight: 600; }
     .editWindow__btnSave:hover {
       background-color: #0097f4;
-      color: white; }
+      color: white;
+      cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */
