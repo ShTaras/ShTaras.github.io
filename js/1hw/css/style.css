@@ -2,128 +2,6 @@
   margin: 0;
   padding: 0; }
 
-.wrapper {
-  max-width: 1024px;
-  margin: 0 auto;
-  font-family: sans-serif; }
-
-.tasks {
-  margin: 5px 0; }
-
-.todoList {
-  width: 100%;
-  padding: 10px; }
-  .todoList__title {
-    text-align: center;
-    font-size: 20px;
-    margin: 20px; }
-  .todoList__addTask {
-    display: flex;
-    padding: 10px; }
-  .todoList__taskText {
-    margin-left: 12%;
-    height: 35px;
-    width: 680px;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 1px solid gray;
-    outline: none; }
-  .todoList__btnAdd {
-    background-color: #0097f4;
-    width: 150px;
-    height: 35px;
-    border: 0;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-left: auto; }
-    .todoList__btnAdd:hover {
-      cursor: pointer; }
-  .todoList__sort {
-    display: flex;
-    flex-direction: row;
-    padding: 15px 15px 0; }
-  .todoList__find {
-    height: 35px;
-    width: 660px;
-    margin: 0 8px;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 1px solid #9c9c9c;
-    outline: none;
-    background-image: url(../img/searchicon.png);
-    background-position: 10px center;
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    padding: 10px 5px 10px 20px;
-    text-indent: 20px; }
-  .todoList__x {
-    width: 36px;
-    height: 36px;
-    margin: 0 55px; }
-  .todoList__sortPriority {
-    width: 30px;
-    margin: 0 21px; }
-  .todoList__sortDate {
-    width: 30px;
-    margin: 0 35px; }
-
-.task {
-  display: flex;
-  flex-direction: row;
-  padding: 15px; }
-  .task__info {
-    margin: auto 0; }
-  .task__importance {
-    background-color: #717171;
-    width: 50px;
-    height: 35px;
-    font-size: 20px;
-    line-height: 35px;
-    color: white;
-    text-align: center;
-    margin: auto 10px; }
-    .task__importance:hover {
-      cursor: pointer; }
-  .task__date {
-    font-size: 20px; }
-  .task__time {
-    text-align: center; }
-  .task__text {
-    padding: 15px;
-    margin: auto;
-    word-wrap: break-word;
-    max-width: 630px;
-    width: 100%;
-    word-break: break-all;
-    background-color: #eeeeee; }
-  .task img {
-    width: 35px;
-    height: auto;
-    margin: 5px; }
-  .task__buttons {
-    height: max-content;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    margin: 0 5px; }
-  .task__btnEdit:hover {
-    cursor: pointer; }
-  .task__btnCheck:hover {
-    cursor: pointer; }
-  .task__btnDelete:hover {
-    cursor: pointer; }
-
-.task-complete .task__text {
-  background-color: #d1eef4; }
-.task-complete .task__btnCheck {
-  opacity: 0.4; }
-
-.task-empty {
-  display: none; }
-
 .deleteWindow {
   position: fixed;
   z-index: 10;
@@ -195,5 +73,135 @@
       background-color: #0097f4;
       color: white;
       cursor: pointer; }
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: sans-serif; }
+
+.tasks {
+  margin: 5px 0; }
+
+.todoList {
+  width: 100%;
+  padding: 10px; }
+  .todoList__title {
+    text-align: center;
+    font-size: 20px;
+    margin: 20px; }
+  .todoList__addTask {
+    display: flex;
+    padding: 10px; }
+  .todoList__taskText {
+    margin-left: 12%;
+    height: 35px;
+    width: 680px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid gray;
+    outline: none; }
+  .todoList__btnAdd {
+    background-color: #0097f4;
+    width: 150px;
+    height: 35px;
+    border: 0;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: auto; }
+    .todoList__btnAdd:hover {
+      cursor: pointer; }
+  .todoList__sort {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 15px 0; }
+  .todoList__find {
+    height: 35px;
+    width: 660px;
+    margin: 0 8px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #9c9c9c;
+    outline: none;
+    background-image: url(../img/searchicon.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding: 10px 5px 10px 20px;
+    text-indent: 20px; }
+  .todoList__sortPriority {
+    width: 30px;
+    margin: 0 15px; }
+  .todoList__sortDate {
+    width: 30px;
+    margin: 0 35px; }
+  .todoList__btnSearch {
+    width: 36px;
+    height: 36px;
+    margin: 0 55px; }
+    .todoList__btnSearch:hover {
+      cursor: pointer; }
+
+.task {
+  display: flex;
+  flex-direction: row;
+  padding: 15px; }
+  .task__info {
+    margin: auto 0; }
+  .task__importance {
+    background-color: #717171;
+    width: 50px;
+    height: 35px;
+    font-size: 20px;
+    line-height: 35px;
+    color: white;
+    text-align: center;
+    margin: auto 10px; }
+    .task__importance:hover {
+      cursor: pointer; }
+  .task__date {
+    font-size: 20px; }
+  .task__time {
+    text-align: center; }
+  .task__text {
+    padding: 15px;
+    margin: auto;
+    word-wrap: break-word;
+    max-width: 630px;
+    width: 100%;
+    word-break: break-all;
+    background-color: #eeeeee; }
+  .task__buttons {
+    height: max-content;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 0 5px; }
+    .task__buttons .taskBtn {
+      width: 35px;
+      height: auto;
+      margin: 5px; }
+  .task__btnEdit:hover {
+    cursor: pointer; }
+  .task__btnCheck:hover {
+    cursor: pointer; }
+  .task__btnDelete:hover {
+    cursor: pointer; }
+  .task__arrowUp:hover {
+    cursor: pointer; }
+  .task__arrowDown {
+    margin-top: 15px; }
+    .task__arrowDown:hover {
+      cursor: pointer; }
+
+.task-complete .task__text {
+  background-color: #d1eef4; }
+.task-complete .task__btnCheck {
+  opacity: 0.4; }
+
+.task-empty {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

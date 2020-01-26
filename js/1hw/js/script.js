@@ -3,6 +3,16 @@ let todoList = [];
 
 let inputTask = document.getElementById('taskText');
 let btnAdd = document.getElementById('btnAdd');
+let btnSortDate = document.getElementById('sortDate');
+let btnSortPriority = document.getElementById('sortPriority');
+let inputSearch = document.getElementById('inputSearch');
+
+let statusSortDate = false;
+let statusSortPriority = false;
+btnSortPriority.addEventListener('click', sortPriority)
+inputSearch.addEventListener('input', findTask);
+//btnSearch.addEventListener("click", findTask);
+btnSortDate.addEventListener("click", sortDate);
 btnAdd.addEventListener("click", addTask);
 document.addEventListener("keypress", function (event) {
     if (event.keyCode === 13) {
@@ -13,9 +23,12 @@ document.addEventListener("keypress", function (event) {
 
 if (!(localStorage.getItem(`todo`) === null)) {
     loadTasks();
-    todoList.forEach(printTask);
+    printAllTask(todoList);
 }
 
+function printAllTask(array) {
+    array.forEach(printTask);
+}
 
 function loadTasks() {
     todoList = JSON.parse(localStorage.getItem('todo'));
@@ -39,9 +52,10 @@ function timeToPrint(task) {
 }
 
 function dateToPrint(task) {
-    let day = new Date(task.date).getDay(),
+
+    let day = new Date(task.date).getDate(),
         month = new Date(task.date).getMonth();
-    if (day < 10) day = ('0' + day);
+    if (day < 10) day = '0' + day;
     if (month < 10) month = '0' + (month + 1);
     return day + '.' + month + '.' + new Date(task.date).getFullYear();
 }
@@ -52,7 +66,7 @@ function initTask() {
         importance: 1,
         taskText: inputTask.value,
         check: false,
-        taskID: createID()
+        taskID: createID(),
     };
     inputTask.value = "";
 }
@@ -72,9 +86,9 @@ function createID() {
 }
 
 function printTask(item) {
-
-    let newTask = document.querySelector('.task-empty').cloneNode(true);
     let tasks = document.getElementById('tasks');
+    let newTask = document.querySelector('.task-empty').cloneNode(true);
+
     newTask.querySelector('.task__date').innerHTML = dateToPrint(item);
     newTask.querySelector('.task__time').innerHTML = timeToPrint(item);
     newTask.querySelector('.task__importance').innerHTML = item.importance;
@@ -85,6 +99,7 @@ function printTask(item) {
     }
 
     newTask.classList.remove('task-empty');
+    newTask.classList.add('task');
     tasks.insertBefore(newTask, tasks.firstChild);
     newTask.addEventListener("click", changeStatus);
 }
@@ -102,9 +117,9 @@ function deleteTask(taskID) {
 }
 
 function checkTask(taskID) {
-    todoList.find(function (index) {
-            if (index.taskID === taskID) {
-                index.check = index.check !== true;
+    todoList.find(function (element) {
+            if (element.taskID === taskID) {
+                element.check = element.check !== true;
             }
         }
     );
@@ -117,7 +132,6 @@ function editTask(taskID, newTaskText) {
             if (element.taskID === taskID) {
                 element.taskText = newTaskText;
                 let task = document.getElementById(taskID);
-                console.log(task);
                 task.querySelector('.task__text').innerHTML = newTaskText;
             }
         }
@@ -125,101 +139,128 @@ function editTask(taskID, newTaskText) {
     saveAll();
 }
 
+function importanceUp(taskID) {
+    todoList.find(function (element) {
+            if (element.taskID === taskID) {
+                if( element.importance < 5) {
+                    element.importance++;
+                }
+                let task = document.getElementById(taskID);
+                task.querySelector('.task__importance').innerHTML = element.importance;
+            }
+        }
+    );
+
+    saveAll();
+}
+
+function importanceDown(taskID) {
+    todoList.find(function (element) {
+            if (element.taskID === taskID) {
+                if(element.importance > 1) {
+                    element.importance--;
+                }
+
+                let task = document.getElementById(taskID);
+                task.querySelector('.task__importance').innerHTML = element.importance;
+            }
+        }
+    );
+
+    saveAll();
+}
+
 function changeStatus() {
     let taskID = this.id;
     let target = event.target;
-
     switch (target.className) {
-        case 'task__btnCheck':
+        case 'task__btnCheck taskBtn':
             checkTask(taskID);
             break;
-        case 'task__btnDelete':
+        case 'task__btnDelete taskBtn':
             showDltMsg(taskID);
             break;
-        case 'task__btnEdit':
+        case 'task__btnEdit taskBtn':
             showEditWindow(taskID);
+            break;
+        case 'task__arrowUp':
+            importanceUp(taskID);
+            break;
+        case 'task__arrowDown':
+            importanceDown(taskID);
             break;
         default:
             break;
     }
 }
 
-function showDltMsg(taskID) {
-    let DltMsg = {
-        window: document.createElement('div'),
-        btnYes: document.createElement('button'),
-        btnNo: document.createElement('button'),
-        close: function () {
-            DltMsg.todo.style.opacity = '1';
-            DltMsg.todo.style.pointerEvents = 'All';
-            document.body.removeChild(DltMsg.window);
-        }
-    }
-    DltMsg.todo = document.getElementById('todoList')
-
-    DltMsg.window.className = 'deleteWindow';
-    DltMsg.btnNo.className = 'deleteWindow__btnYn';
-    DltMsg.btnNo.innerHTML = 'No';
-
-    DltMsg.btnYes.className = 'deleteWindow__btnYn';
-    DltMsg.btnYes.innerHTML = 'Yes';
-
-    DltMsg.todo.style.opacity = '0.5';
-    DltMsg.todo.style.pointerEvents = 'none';
-    document.body.appendChild(DltMsg.window);
-    DltMsg.window.innerHTML = '<p class="deleteWindow__notice">Delete item?</p>';
-    DltMsg.window.appendChild(DltMsg.btnNo);
-    DltMsg.window.appendChild(DltMsg.btnYes);
-
-    DltMsg.btnNo.addEventListener('click', DltMsg.close);
-    DltMsg.btnYes.addEventListener('click', function () {
-        deleteTask(taskID);
-        DltMsg.close();
-    });
-}
-
-function showEditWindow(taskID) {
-    let editWindow = {
-        todo: document.getElementById('todoList'),
-        window: document.createElement('div'),
-        textArea: document.createElement('textarea'),
-        btnCancel: document.createElement('button'),
-        btnSave: document.createElement('button'),
-        close: function () {
-            editWindow.todo.style.opacity = '1';
-            editWindow.todo.style.pointerEvents = 'All';
-            document.body.removeChild(editWindow.window);
-        }
-    }
-    editWindow.window.className = 'editWindow';
-
-    editWindow.btnCancel.className = 'editWindow__btnCancel';
-    editWindow.btnCancel.innerHTML = 'CANCEL';
-
-    editWindow.btnSave.className = 'editWindow__btnSave';
-    editWindow.btnSave.innerHTML = 'SAVE';
-
-    editWindow.textArea.className = 'editWindow__newTextTask';
-    editWindow.textArea.innerHTML = '';
-    editWindow.textArea.placeholder = 'New text of todo item';
-
-    editWindow.todo.style.opacity = '0.5';
-    editWindow.todo.style.pointerEvents = 'none';
-
-    document.body.appendChild(editWindow.window);
-    editWindow.window.innerHTML = '<p class="editWindow__notice">Edit text</p>';
-    editWindow.window.appendChild(editWindow.textArea);
-    editWindow.window.appendChild(editWindow.btnCancel);
-    editWindow.window.appendChild(editWindow.btnSave);
-
-    editWindow.btnCancel.addEventListener('click', editWindow.close);
-    editWindow.btnSave.addEventListener('click', function () {
-        let newTaskText = editWindow.textArea.value;
-        editTask(taskID, newTaskText);
-        editWindow.close();
+function clearPrint() {
+    let task = document.querySelectorAll('.task');
+    task.forEach(function (element) {
+        element.remove();
     })
+}
+
+function sortDate() {
+
+
+    if (statusSortDate === false) {
+        todoList.sort(function (elementPrev, elementNext) {
+            let prevDate = new Date(elementPrev.date);
+            let NextDate = new Date(elementNext.date);
+            statusSortDate = true;
+            return NextDate - prevDate;
+        })
+    } else {
+        console.log('true');
+        todoList.sort(function (elementPrev, elementNext) {
+            let prevDate = new Date(elementPrev.date);
+            let NextDate = new Date(elementNext.date);
+            statusSortDate = false;
+            return prevDate - NextDate;
+        })
+    }
+    saveAll();
+    clearPrint();
+    printAllTask(todoList);
+
+}
+function sortPriority() {
+
+    if (statusSortPriority === false) {
+        todoList.sort(function (elementPrev, elementNext) {
+            statusSortPriority = true;
+            return elementNext.importance - elementPrev.importance;
+        })
+    } else {
+        todoList.sort(function (elementPrev, elementNext) {
+            statusSortPriority = false;
+            return elementPrev.importance - elementNext.importance ;
+        })
+    }
+    saveAll();
+    clearPrint();
+    printAllTask(todoList);
 
 }
 
+function findTask() {
 
+    let findInput = this.value;
+
+    let todoListFind = todoList.filter(function (element, index, arr) {
+        if (element.taskText === findInput) {
+            return true;
+        }
+    });
+
+    if (todoListFind.length !== 0) {
+        clearPrint();
+        printAllTask(todoListFind);
+    } else {
+        clearPrint();
+        printAllTask(todoList);
+    }
+
+}
 

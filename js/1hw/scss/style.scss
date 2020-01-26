@@ -3,6 +3,7 @@
   padding: 0;
 }
 
+@import "UI";
 .wrapper {
   max-width: 1024px;
   margin: 0 auto;
@@ -50,7 +51,8 @@
     font-weight: bold;
     border-radius: 5px;
     margin-left: auto;
-    &:hover{
+
+    &:hover {
       cursor: pointer;
     }
   }
@@ -65,7 +67,7 @@
 
     height: 35px;
     width: 660px;
-    margin:0 8px;
+    margin: 0 8px;
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -74,23 +76,15 @@
     background-image: url(../img/searchicon.png);
     background-position: 10px center;
     background-repeat: no-repeat;
-background-size: 20px 20px;
+    background-size: 20px 20px;
     padding: 10px 5px 10px 20px;
     text-indent: 20px;
 
-
-
-  }
-
-  &__x{
-    width: 36px;
-    height: 36px;
-    margin: 0 55px;
   }
 
   &__sortPriority {
     width: 30px;
-    margin: 0 21px;
+    margin: 0 15px;
   }
 
   &__sortDate {
@@ -98,6 +92,15 @@ background-size: 20px 20px;
     margin: 0 35px;
   }
 
+  &__btnSearch {
+    width: 36px;
+    height: 36px;
+    margin: 0 55px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
 }
 
@@ -121,7 +124,8 @@ background-size: 20px 20px;
     color: white;
     text-align: center;
     margin: auto 10px;
-    &:hover{
+
+    &:hover {
       cursor: pointer;
     }
   }
@@ -144,11 +148,6 @@ background-size: 20px 20px;
     background-color: #eeeeee;
   }
 
-  img {
-    width: 35px;
-    height: auto;
-    margin: 5px;
-  }
 
   &__buttons {
     height: max-content;
@@ -156,23 +155,45 @@ background-size: 20px 20px;
     display: flex;
     flex-direction: row;
     margin: 0 5px;
-  }
-  &__btnEdit{
-    &:hover{
-      cursor: pointer;
+
+    .taskBtn {
+      width: 35px;
+      height: auto;
+      margin: 5px;
     }
   }
-  &__btnCheck{
-    &:hover{
-      cursor: pointer;
-    }
-  }
-  &__btnDelete{
-    &:hover{
+
+  &__btnEdit {
+    &:hover {
       cursor: pointer;
     }
   }
 
+  &__btnCheck {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__btnDelete {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__arrowUp {
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__arrowDown {
+margin-top: 15px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .task-complete {
@@ -190,101 +211,5 @@ background-size: 20px 20px;
   display: none;
 }
 
-.deleteWindow {
-  position: fixed;
 
-  z-index: 10;
-  top: 50%;
-  left: 50%;
 
-  transform: translate(-50%, -50%);
-  width: 230px;
-  height: 120px;
-  background-color: #eeeeee;
-
-  &__notice {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 20px;
-    font-family: sans-serif;
-  }
-
-  &__btnYn {
-    &:nth-child(2) {
-      margin-left: 35px;
-    }
-
-    font-weight: 600;
-    background-color: inherit;
-    width: 80px;
-    height: 30px;
-    margin-top: 20px;
-    color: #0097f4;
-    border: none;
-
-    &:hover {
-      background-color: #0097f4;
-      color: white;
-      cursor: pointer;
-    }
-  }
-
-}
-
-.editWindow {
-  position: fixed;
-
-  padding: 0 15px;
-  z-index: 10;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 320px;
-  height: 240px;
-  background-color: #eeeeee;
-
-  &__notice {
-    text-align: center;
-    margin: 10px;
-    font-size: 16px;
-    font-family: sans-serif;
-  }
-
-  &__newTextTask {
-    resize: none;
-    width: 100%;
-    height: 160px;
-    font-size: 16px;
-  }
-
-  &__btnCancel {
-    background-color: inherit;
-    width: 49%;
-    height: 30px;
-    color: #0097f4;
-    border: none;
-    font-weight: 600;
-
-    &:hover {
-      background-color: #0097f4;
-      color: white;
-      cursor: pointer;
-    }
-  }
-
-  &__btnSave {
-    background-color: inherit;
-    width: 49%;
-    height: 30px;
-    color: #0097f4;
-    border: none;
-    font-weight: 600;
-
-    &:hover {
-      background-color: #0097f4;
-      color: white;
-      cursor: pointer;
-    }
-  }
-
-}
