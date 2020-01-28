@@ -5,13 +5,14 @@ const inputTask = document.getElementById('taskText');
 const btnAdd = document.getElementById('btnAdd');
 const btnSortDate = document.getElementById('sortDate');
 const btnSortPriority = document.getElementById('sortPriority');
-const btnDefaultSort = document.getElementById('sortDefault');
+const btnSortCheck = document.getElementById('sortCheck');
 const inputSearch = document.getElementById('inputSearch');
 
 let statusSortDate = false;
+let statusSortCheck = false;
 let statusSortPriority = true;
 
-btnDefaultSort.addEventListener('click', sortPriority);
+btnSortCheck.addEventListener('click', sortCheck);
 btnSortPriority.addEventListener('click', sortPriority)
 inputSearch.addEventListener('input', findTask);
 btnSortDate.addEventListener("click", sortDate);
@@ -229,7 +230,23 @@ function sortPriority() {
     printAllTask(todoList);
 
 }
+function sortCheck() {
+    if (statusSortCheck === false) {
+        todoList.sort(function (elementPrev, elementNext) {
+            return elementNext.check - elementPrev.check;
+        })
+        statusSortCheck = true;
+    } else {
+        todoList.sort(function (elementPrev, elementNext) {
+            return elementPrev.check - elementNext.check;
+        })
+        statusSortCheck = false;
+    }
+    saveAll();
+    clearPrint();
+    printAllTask(todoList);
 
+}
 function findTask() {
     let findInput = this.value;
     let todoListFind = todoList.filter(function (element) {

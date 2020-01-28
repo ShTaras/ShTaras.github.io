@@ -126,6 +126,7 @@
   .todoList__find {
     height: 35px;
     max-width: 660px;
+    min-width: 60px;
     width: 100%;
     border-top: 0;
     border-left: 0;
@@ -150,12 +151,12 @@
     padding: 0 40px; }
     .todoList__sortDate:hover {
       cursor: pointer; }
-  .todoList__btnDefaultSort {
+  .todoList__btnSortCheck {
     width: 36px;
     height: 36px;
     margin: 0 5px;
     padding: 0 50px; }
-    .todoList__btnDefaultSort:hover {
+    .todoList__btnSortCheck:hover {
       cursor: pointer; }
 
 .task {
