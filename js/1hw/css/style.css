@@ -91,7 +91,7 @@
   margin: 5px 0; }
 
 .todoList {
-  padding: 10px; }
+  padding: 1%; }
   .todoList__title {
     text-align: center;
     font-size: 20px;
@@ -176,7 +176,7 @@
     .task__importance:hover {
       cursor: pointer; }
   .task__editImportance {
-    margin: auto 0; }
+    margin: auto 2px; }
   .task__date {
     font-size: 20px; }
   .task__time {
