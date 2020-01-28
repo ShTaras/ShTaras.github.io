@@ -5,9 +5,11 @@
 .deleteWindow {
   position: fixed;
   z-index: 10;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
   width: 230px;
   height: 120px;
   background-color: #eeeeee; }
@@ -29,15 +31,18 @@
     .deleteWindow__btnYn:hover {
       background-color: #0097f4;
       color: white;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: .6s; }
 
 .editWindow {
   position: fixed;
   padding: 0 15px;
   z-index: 10;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
   width: 320px;
   height: 240px;
   background-color: #eeeeee; }
@@ -61,7 +66,8 @@
     .editWindow__btnCancel:hover {
       background-color: #0097f4;
       color: white;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: .6s; }
   .editWindow__btnSave {
     background-color: inherit;
     width: 49%;
@@ -72,7 +78,8 @@
     .editWindow__btnSave:hover {
       background-color: #0097f4;
       color: white;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: .6s; }
 
 .wrapper {
   max-width: 1024px;
@@ -93,9 +100,9 @@
     display: flex;
     padding: 10px; }
   .todoList__taskText {
-    margin-left: 12%;
+    margin-left: 15%;
     height: 35px;
-    width: 680px;
+    width: 700px;
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -133,15 +140,19 @@
     text-indent: 20px; }
   .todoList__sortPriority {
     width: 30px;
-    margin: 0 15px; }
+    margin: 0 20px; }
+    .todoList__sortPriority:hover {
+      cursor: pointer; }
   .todoList__sortDate {
     width: 30px;
-    margin: 0 35px; }
-  .todoList__btnSearch {
+    margin: 0 55px; }
+    .todoList__sortDate:hover {
+      cursor: pointer; }
+  .todoList__btnDefaultSort {
     width: 36px;
     height: 36px;
     margin: 0 55px; }
-    .todoList__btnSearch:hover {
+    .todoList__btnDefaultSort:hover {
       cursor: pointer; }
 
 .task {
@@ -149,7 +160,7 @@
   flex-direction: row;
   padding: 15px; }
   .task__info {
-    margin: auto 0; }
+    margin: auto 20px; }
   .task__importance {
     background-color: #717171;
     width: 50px;
@@ -161,6 +172,8 @@
     margin: auto 10px; }
     .task__importance:hover {
       cursor: pointer; }
+  .task__editImportance {
+    margin: auto 0; }
   .task__date {
     font-size: 20px; }
   .task__time {
@@ -169,7 +182,7 @@
     padding: 15px;
     margin: auto;
     word-wrap: break-word;
-    max-width: 630px;
+    max-width: 580px;
     width: 100%;
     word-break: break-all;
     background-color: #eeeeee; }

@@ -1,17 +1,19 @@
 let taskTemp;
 let todoList = [];
 
-let inputTask = document.getElementById('taskText');
-let btnAdd = document.getElementById('btnAdd');
-let btnSortDate = document.getElementById('sortDate');
-let btnSortPriority = document.getElementById('sortPriority');
-let inputSearch = document.getElementById('inputSearch');
+const inputTask = document.getElementById('taskText');
+const btnAdd = document.getElementById('btnAdd');
+const btnSortDate = document.getElementById('sortDate');
+const btnSortPriority = document.getElementById('sortPriority');
+const btnDefaultSort = document.getElementById('sortDefault');
+const inputSearch = document.getElementById('inputSearch');
 
 let statusSortDate = false;
-let statusSortPriority = false;
+let statusSortPriority = true;
+
+btnDefaultSort.addEventListener('click', sortPriority);
 btnSortPriority.addEventListener('click', sortPriority)
 inputSearch.addEventListener('input', findTask);
-//btnSearch.addEventListener("click", findTask);
 btnSortDate.addEventListener("click", sortDate);
 btnAdd.addEventListener("click", addTask);
 document.addEventListener("keypress", function (event) {
@@ -20,11 +22,12 @@ document.addEventListener("keypress", function (event) {
     }
 });
 
-
 if (!(localStorage.getItem(`todo`) === null)) {
     loadTasks();
+    sortPriority();
     printAllTask(todoList);
 }
+
 
 function printAllTask(array) {
     array.forEach(printTask);
@@ -38,8 +41,7 @@ function addTask() {
     if (inputTask.value !== '') {
         initTask();
         saveNew();
-    } else
-        alert('Task is empty');
+    }
 }
 
 function timeToPrint(task) {
@@ -48,11 +50,9 @@ function timeToPrint(task) {
     if (hours < 10) hours = '0' + hours;
     if (minutes < 10) minutes = '0' + minutes;
     return hours + ':' + minutes;
-
 }
 
 function dateToPrint(task) {
-
     let day = new Date(task.date).getDate(),
         month = new Date(task.date).getMonth();
     if (day < 10) day = '0' + day;
@@ -88,16 +88,12 @@ function createID() {
 function printTask(item) {
     let tasks = document.getElementById('tasks');
     let newTask = document.querySelector('.task-empty').cloneNode(true);
-
     newTask.querySelector('.task__date').innerHTML = dateToPrint(item);
     newTask.querySelector('.task__time').innerHTML = timeToPrint(item);
     newTask.querySelector('.task__importance').innerHTML = item.importance;
     newTask.querySelector('.task__text').innerHTML = '<p>' + item.taskText + '</p>'
     newTask.id = item.taskID;
-    if (item.check === true) {
-        newTask.classList.add('task-complete');
-    }
-
+    if (item.check === true) newTask.classList.add('task-complete');
     newTask.classList.remove('task-empty');
     newTask.classList.add('task');
     tasks.insertBefore(newTask, tasks.firstChild);
@@ -111,16 +107,17 @@ function deleteTask(taskID) {
         }
     });
     todoList.splice(index, 1);
-    document.getElementById('tasks').removeChild(document.getElementById(taskID));
-    saveAll();
+    document.getElementById(taskID).classList.add('fadeOutLeft');
+    setTimeout(function () {
+        document.getElementById('tasks').removeChild(document.getElementById(taskID))
+    }, 600);
 
+    saveAll();
 }
 
 function checkTask(taskID) {
     todoList.find(function (element) {
-            if (element.taskID === taskID) {
-                element.check = element.check !== true;
-            }
+            if (element.taskID === taskID) element.check = element.check !== true;
         }
     );
     document.getElementById(taskID).classList.toggle('task-complete');
@@ -142,31 +139,24 @@ function editTask(taskID, newTaskText) {
 function importanceUp(taskID) {
     todoList.find(function (element) {
             if (element.taskID === taskID) {
-                if( element.importance < 5) {
-                    element.importance++;
-                }
+                if (element.importance < 5) element.importance++;
                 let task = document.getElementById(taskID);
                 task.querySelector('.task__importance').innerHTML = element.importance;
             }
         }
-    );
-
+    )
     saveAll();
 }
 
 function importanceDown(taskID) {
     todoList.find(function (element) {
             if (element.taskID === taskID) {
-                if(element.importance > 1) {
-                    element.importance--;
-                }
-
+                if (element.importance > 1) element.importance--;
                 let task = document.getElementById(taskID);
                 task.querySelector('.task__importance').innerHTML = element.importance;
             }
         }
-    );
-
+    )
     saveAll();
 }
 
@@ -202,41 +192,37 @@ function clearPrint() {
 }
 
 function sortDate() {
-
-
     if (statusSortDate === false) {
         todoList.sort(function (elementPrev, elementNext) {
-            let prevDate = new Date(elementPrev.date);
-            let NextDate = new Date(elementNext.date);
-            statusSortDate = true;
+            let prevDate = new Date(elementPrev.date),
+                NextDate = new Date(elementNext.date);
             return NextDate - prevDate;
         })
+        statusSortDate = true;
     } else {
-        console.log('true');
         todoList.sort(function (elementPrev, elementNext) {
-            let prevDate = new Date(elementPrev.date);
-            let NextDate = new Date(elementNext.date);
-            statusSortDate = false;
+            let prevDate = new Date(elementPrev.date),
+                NextDate = new Date(elementNext.date);
             return prevDate - NextDate;
         })
+        statusSortDate = false;
     }
     saveAll();
     clearPrint();
     printAllTask(todoList);
-
 }
-function sortPriority() {
 
+function sortPriority() {
     if (statusSortPriority === false) {
         todoList.sort(function (elementPrev, elementNext) {
-            statusSortPriority = true;
             return elementNext.importance - elementPrev.importance;
         })
+        statusSortPriority = true;
     } else {
         todoList.sort(function (elementPrev, elementNext) {
-            statusSortPriority = false;
-            return elementPrev.importance - elementNext.importance ;
+            return elementPrev.importance - elementNext.importance;
         })
+        statusSortPriority = false;
     }
     saveAll();
     clearPrint();
@@ -245,22 +231,18 @@ function sortPriority() {
 }
 
 function findTask() {
-
     let findInput = this.value;
-
-    let todoListFind = todoList.filter(function (element, index, arr) {
-        if (element.taskText === findInput) {
-            return true;
-        }
+    let todoListFind = todoList.filter(function (element) {
+                if(element.taskText.indexOf(findInput) >= 0) return true;
     });
-
     if (todoListFind.length !== 0) {
         clearPrint();
         printAllTask(todoListFind);
-    } else {
+    } else if (findInput === '') {
         clearPrint();
         printAllTask(todoList);
+    } else {
+        clearPrint();
     }
-
 }
 

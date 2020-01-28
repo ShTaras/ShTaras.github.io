@@ -32,9 +32,9 @@
   }
 
   &__taskText {
-    margin-left: 12%;
+    margin-left: 15%;
     height: 35px;
-    width: 680px;
+    width: 700px;
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -84,15 +84,21 @@
 
   &__sortPriority {
     width: 30px;
-    margin: 0 15px;
+    margin: 0 20px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__sortDate {
     width: 30px;
-    margin: 0 35px;
+    margin: 0 55px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
-  &__btnSearch {
+  &__btnDefaultSort {
     width: 36px;
     height: 36px;
     margin: 0 55px;
@@ -111,7 +117,7 @@
   padding: 15px;
 
   &__info {
-    margin: auto 0;
+    margin: auto 20px;
   }
 
   &__importance {
@@ -129,7 +135,9 @@
       cursor: pointer;
     }
   }
-
+&__editImportance{
+  margin: auto 0;
+}
   &__date {
     font-size: 20px;
   }
@@ -142,7 +150,7 @@
     padding: 15px;
     margin: auto;
     word-wrap: break-word;
-    max-width: 630px;
+    max-width: 580px;
     width: 100%;
     word-break: break-all;
     background-color: #eeeeee;
