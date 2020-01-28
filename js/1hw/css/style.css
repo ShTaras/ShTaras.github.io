@@ -90,7 +90,6 @@
   margin: 5px 0; }
 
 .todoList {
-  width: 100%;
   padding: 10px; }
   .todoList__title {
     text-align: center;
@@ -122,10 +121,11 @@
   .todoList__sort {
     display: flex;
     flex-direction: row;
-    padding: 15px 15px 0; }
+    padding: 15px 1.5% 0; }
   .todoList__find {
     height: 35px;
-    width: 660px;
+    max-width: 660px;
+    width: 100%;
     margin: 0 8px;
     border-top: 0;
     border-left: 0;
@@ -140,12 +140,14 @@
     text-indent: 20px; }
   .todoList__sortPriority {
     width: 30px;
-    margin: 0 20px; }
+    margin: 0 0.7%;
+    padding: 0 10px; }
     .todoList__sortPriority:hover {
       cursor: pointer; }
   .todoList__sortDate {
     width: 30px;
-    margin: 0 55px; }
+    margin: 0 1.5%;
+    padding: 0 40px; }
     .todoList__sortDate:hover {
       cursor: pointer; }
   .todoList__btnDefaultSort {
@@ -158,12 +160,12 @@
 .task {
   display: flex;
   flex-direction: row;
-  padding: 15px; }
+  padding: 1.5%; }
   .task__info {
-    margin: auto 20px; }
+    margin: auto 2%; }
   .task__importance {
     background-color: #717171;
-    width: 50px;
+    min-width: 40px;
     height: 35px;
     font-size: 20px;
     line-height: 35px;
