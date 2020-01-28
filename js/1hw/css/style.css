@@ -147,7 +147,6 @@
       cursor: pointer; }
   .todoList__sortDate {
     width: 30px;
-    margin: 0 1.5%;
     padding: 0 40px; }
     .todoList__sortDate:hover {
       cursor: pointer; }
@@ -163,8 +162,11 @@
   display: flex;
   flex-direction: row;
   padding: 1.5%; }
-  .task__info {
+  .task__clock {
     margin: auto 2%; }
+  .task__info {
+    display: flex;
+    flex-direction: row; }
   .task__importance {
     background-color: #717171;
     min-width: 40px;
@@ -177,7 +179,8 @@
     .task__importance:hover {
       cursor: pointer; }
   .task__editImportance {
-    margin: auto 2px; }
+    margin: auto 2px;
+    width: max-content; }
   .task__date {
     font-size: 20px; }
   .task__time {
@@ -220,5 +223,15 @@
 
 .task-empty {
   display: none; }
+
+@media all and (max-width: 750px) {
+  .task__buttons {
+    flex-direction: column; }
+  .task__info {
+    flex-direction: column;
+    align-items: center; }
+
+  .todoList__sortDate {
+    padding: 0; } }
 
 /*# sourceMappingURL=style.css.map */

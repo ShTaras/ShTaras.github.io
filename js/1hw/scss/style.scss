@@ -87,6 +87,7 @@
     width: 30px;
     margin: 0 0.7%;
     padding: 0 10px;
+
     &:hover {
       cursor: pointer;
     }
@@ -94,8 +95,8 @@
 
   &__sortDate {
     width: 30px;
-    margin: 0 1.5%;
     padding: 0 40px;
+
     &:hover {
       cursor: pointer;
     }
@@ -105,7 +106,8 @@
     width: 36px;
     height: 36px;
     margin: 0 5px;
-    padding:  0 50px;
+    padding: 0 50px;
+
     &:hover {
       cursor: pointer;
     }
@@ -119,8 +121,13 @@
   flex-direction: row;
   padding: 1.5%;
 
-  &__info {
+  &__clock {
     margin: auto 2%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
   }
 
   &__importance {
@@ -137,9 +144,12 @@
       cursor: pointer;
     }
   }
-&__editImportance{
-  margin: auto 2px;
-}
+
+  &__editImportance {
+    margin: auto 2px;
+    width: max-content;
+  }
+
   &__date {
     font-size: 20px;
   }
@@ -199,7 +209,8 @@
   }
 
   &__arrowDown {
-margin-top: 15px;
+    margin-top: 15px;
+
     &:hover {
       cursor: pointer;
     }
@@ -221,5 +232,18 @@ margin-top: 15px;
   display: none;
 }
 
-
+@media all and (max-width: 750px) {
+  .task {
+    &__buttons {
+      flex-direction: column;
+    }
+    &__info{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .todoList__sortDate{
+    padding: 0;
+  }
+}
 
