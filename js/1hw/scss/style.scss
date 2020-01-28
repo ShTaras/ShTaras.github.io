@@ -68,7 +68,6 @@
     height: 35px;
     max-width: 660px;
     width: 100%;
-    margin: 0 8px;
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -104,8 +103,8 @@
   &__btnDefaultSort {
     width: 36px;
     height: 36px;
-    margin: 0 55px;
-
+    margin: 0 5px;
+    padding:  0 50px;
     &:hover {
       cursor: pointer;
     }
@@ -120,9 +119,7 @@
   padding: 1.5%;
 
   &__info {
-    //margin: auto 20px;
     margin: auto 2%;
-
   }
 
   &__importance {
