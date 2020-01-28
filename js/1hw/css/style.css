@@ -232,6 +232,9 @@
     align-items: center; }
 
   .todoList__sortDate {
-    padding: 0; } }
+    padding: 0; }
+
+  .todoList__btnSortCheck {
+    padding: 0 10px; } }
 
 /*# sourceMappingURL=style.css.map */
