@@ -49,9 +49,9 @@ window.onload = function () {
 
     function dateToPrint(task) {
         let day = new Date(task.date).getDate(),
-            month = new Date(task.date).getMonth();
+            month = (new Date(task.date).getMonth()) + 1;
         if (day < 10) day = '0' + day;
-        if (month < 10) month = '0' + (month + 1);
+        if (month < 10) month = '0' + month;
         return day + '.' + month + '.' + new Date(task.date).getFullYear();
     }
 
@@ -278,6 +278,7 @@ window.onload = function () {
         DltMsg.btnYes.innerHTML = 'Yes';
         DltMsg.todo.style.opacity = '0.5';
         DltMsg.todo.style.pointerEvents = 'none';
+        DltMsg.todo.style.userSelect = 'none';
         document.body.appendChild(DltMsg.window);
         DltMsg.window.innerHTML = '<p class="deleteWindow__notice">Delete item?</p>';
         DltMsg.window.appendChild(DltMsg.btnNo);
@@ -311,6 +312,7 @@ window.onload = function () {
         editWindow.textArea.innerHTML = '';
         editWindow.textArea.placeholder = 'New text of todo item';
         editWindow.todo.style.opacity = '0.5';
+        editWindow.todo.style.userSelect = 'none';
         editWindow.todo.style.pointerEvents = 'none';
         document.body.appendChild(editWindow.window);
         editWindow.window.innerHTML = '<p class="editWindow__notice">Edit text</p>';
