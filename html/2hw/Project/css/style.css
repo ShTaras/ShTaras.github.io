@@ -1,0 +1,357 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.wrapper{
+    margin: 0 auto;
+    max-width: 1280px;
+    min-width: 360px;
+}
+
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 90px;
+}
+
+.logo {
+    margin-left: 10%;
+    float: left;
+    margin-top: 10px;
+}
+
+.nav {
+    float: right;
+}
+
+.nav__mainMenu {
+    list-style: none;
+}
+
+.nav__li {
+    display: inline-block;
+    margin: 0 20px 0px;
+    font-family: "Segoe UI";
+}
+
+.nav__link {
+    text-decoration: none;
+    line-height: 38px;
+    color: #6c6c6c;
+}
+
+.nav__link:after {
+    display: block;
+    content: "";
+    height: 3px;
+    width: 0%;
+    background-color: #5094f2;
+    transition: width;
+}
+
+.nav__link:hover:after,
+.nav__link:focus:after {
+    width: 100%;
+}
+
+
+.content1Wrap {
+    margin: 50px 10%;
+}
+
+.content {
+    display: flex;
+}
+
+.content2Wrap {
+    display: flex;
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.rightCol {
+    padding: 50px 60px 0px;
+}
+
+.leftCol {
+    text-align: center;
+    justify-content: center;
+}
+
+.card__m-text {
+    display: flex;
+    margin: 0 35px 0;
+}
+
+
+.card__image {
+    align-self: center;
+}
+
+.slider__image {
+    align-self: center;
+    width: 100%;
+    height: 100%
+}
+
+.rightCol__mainText2 {
+    line-height: 2.5;
+}
+
+.text {
+    font-family: "Segoe UI";
+    color: #6c6c6c;
+}
+
+.nav__mainMenu {
+    list-style: none;
+    margin: 40px 50px 0px;
+    padding: 0px 0px 20px;
+    text-align: center;
+    background: white;
+    font-size: 20pt;
+    font-family: SegoeWPN;
+}
+
+.slider {
+    position: relative;
+}
+
+.contentSlider {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 30%;
+    left: 50%;
+    width: 40%;
+}
+
+.card__text {
+    margin-top: 20px;
+}
+
+.nav__li {
+    display: inline-block;
+}
+
+.slider__btn {
+    width: 200px;
+    order: 3;
+    background-color: #5094f2;
+    color: white;
+    font-size: 24px;
+    font-family: "Segoe UI";
+    padding: 7px 8px;
+    margin: 0 0 0;
+    border: none;
+    cursor: pointer;
+}
+
+.slider__btn a {
+    text-decoration: none;
+    background-color: #5094f2;
+    color: white;
+    font-size: 24px;
+    font-family: "Segoe UI";
+}
+
+.slider__text {
+    font-size: 38pt;
+    color: white;
+    font-family: "Segoe WP Light";
+    margin: 0;
+
+}
+
+.slider__text1 {
+    font-size: 24pt;
+    color: white;
+    font-family: "Segoe WP Light";
+   // width: 300px;
+    margin-bottom: 20px;
+}
+.card__title{
+    color: #5c9bf3;
+    font-size: 20pt;
+}
+.leftCol__title {
+    font-family: "Segoe WP Light";
+    font-size: 30pt;
+    color: #6c6c6c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rightCol__title {
+    font-family: "Segoe WP Light";
+    font-size: 23pt;
+    color: #6c6c6c;
+}
+
+.footer__text {
+    margin: 20px 20px;
+    text-align: center;
+}
+@media screen and (max-width: 1050px) {
+
+    .slider__text {
+        font-size: 24pt;
+    }
+
+    .slider__text1 {
+        font-size: 14pt;
+    }
+    .nav__mainMenu {
+        display: none;
+    }
+    .nav::after {
+        display: block;
+        content: "";
+        background-image: url(../img/shape.png);
+        background-size: 100%;
+        position: absolute;
+        height: 52px;
+        width: 68px;
+        top: 25px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .nav__li {
+        width: 50%;
+    }
+
+    .nav:hover .nav__mainMenu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 1;
+        right: -5%;
+        top: 35%;
+    }
+
+    .content {
+        flex-direction: column;
+        margin: 10px 5%;
+    }
+
+    .content2Wrap {
+        flex-direction: column;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    .leftCol {
+        left: 50%;
+    }
+
+    .rightCol {
+        padding: 0px 50px 0px;
+    }
+
+    .main_text2 {
+        margin-top: 0px;
+    }
+
+
+    .card__text {
+        text-align: left;
+        margin-left: 20px;
+
+    }
+
+    .card__m-text {
+        display: inline-block;
+        margin: auto;
+    }
+
+    .card__title {
+        display: inline-block;
+    }
+
+    .card__title {
+        font-size: 30pt;
+        padding-bottom: 10px;
+    }
+
+    .card {
+        flex-direction: row;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .leftCol__img {
+        display: block;
+        width: 45%;
+        left: 50%;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+}
+@media screen and (max-width: 620px)
+{
+
+    .card__title {
+        font-size: 18pt;
+        padding-bottom: 10px;
+        font-weight: 400;
+        font-family: "Segoe UI";
+    }
+    .slider__text {
+        font-size: 14pt;
+    }
+    .slider__text1 {
+        font-size: 12pt;
+
+
+    }
+    .card__image{
+        width: 27%;
+    }
+    .contentSlider{
+        top: 20%;
+    }
+    .leftCol__img{
+        width: 35%;
+    }
+    .slider__btn{
+        width: 160px;
+    }
+    .slider__btn a{
+        font-size: 16pt;
+    }
+    .card__mText{
+        font-size: 11pt;
+    }
+    .logo{
+        margin-left: 4%;
+    }
+    .nav::after {
+
+        height: 39px;
+        width: 52px;
+
+    }
+    .leftCol__title{
+        font-size: 22pt;
+    }
+    .rightCol__title{
+        font-size: 20pt;
+    }
+    .slider__btn{
+        padding: 3px 4px;
+    }
+    .footer__text{
+        font-size: 10pt;
+    }
+    .contentSlider{
+        width: auto;
+    }
+}

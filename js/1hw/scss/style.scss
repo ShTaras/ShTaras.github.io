@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@import "UI";
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.tasks {
+  margin: 5px 0;
+}
+
+.todoList {
+  padding: 1%;
+
+  &__title {
+    text-align: center;
+    font-size: 20px;
+
+    margin: 20px;
+  }
+
+  &__addTask {
+    display: flex;
+    padding: 10px;
+
+  }
+
+  &__taskText {
+    margin-left: 15%;
+    height: 35px;
+    width: 700px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid gray;
+    outline: none;
+  }
+
+  &__btnAdd {
+    background-color: #0097f4;
+    width: 150px;
+    height: 35px;
+    border: 0;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: auto;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__sort {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 1.5% 0;
+  }
+
+  &__find {
+
+    height: 35px;
+    max-width: 660px;
+    min-width: 60px;
+    width: 100%;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #9c9c9c;
+    outline: none;
+    background-image: url(../img/searchicon.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding: 10px 5px 10px 20px;
+    text-indent: 20px;
+
+  }
+
+  &__sortPriority {
+    width: 30px;
+    margin: 0 0.7%;
+    padding: 0 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__sortDate {
+    width: 30px;
+    padding: 0 40px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__btnSortCheck {
+    width: 36px;
+    height: 36px;
+    margin: 0 5px;
+    padding: 0 50px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+}
+
+
+.task {
+  display: flex;
+  flex-direction: row;
+  padding: 1.5%;
+
+  &__clock {
+    margin: auto 2%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__importance {
+    background-color: #717171;
+    min-width: 40px;
+    height: 35px;
+    font-size: 20px;
+    line-height: 35px;
+    color: white;
+    text-align: center;
+    margin: auto 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__editImportance {
+    margin: auto 2px;
+    width: max-content;
+  }
+
+  &__date {
+    font-size: 20px;
+  }
+
+  &__time {
+    text-align: center;
+  }
+
+  &__text {
+    padding: 15px;
+    margin: auto;
+    word-wrap: break-word;
+    max-width: 580px;
+    width: 100%;
+    word-break: break-all;
+    background-color: #eeeeee;
+  }
+
+
+  &__buttons {
+    height: max-content;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 0 5px;
+
+    .taskBtn {
+      width: 35px;
+      height: auto;
+      margin: 5px;
+    }
+  }
+
+  &__btnEdit {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__btnCheck {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__btnDelete {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__arrowUp {
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__arrowDown {
+    margin-top: 15px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.task-complete {
+  .task__text {
+    background-color: #d1eef4;
+  }
+
+  .task__btnCheck {
+    opacity: 0.4;
+
+  }
+}
+
+.task-empty {
+  display: none;
+}
+
+@media all and (max-width: 750px) {
+  .task {
+    &__buttons {
+      flex-direction: column;
+    }
+    &__info{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .todoList__sortDate{
+    padding: 0;
+  }
+  .todoList__btnSortCheck{
+    padding: 0 10px;
+  }
+}
+

@@ -1,0 +1,101 @@
+@import "reset";
+@import "header";
+@import "main";
+@import "font";
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 25px;
+  overflow-x: hidden;
+}
+
+
+@import "footer";
+@media all and (max-width: 1045px) {
+  .content {
+    .headerTextBlock {
+      width: 100%;
+    }
+  }
+  .btnTryForFree {
+    margin: 10px 0 0 0;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .blockComments {
+    .container {
+      flex-direction: column;
+    }
+
+    .comments {
+      width: 100%;
+    }
+  }
+  .footerContacts {
+    flex-wrap: wrap;
+  }
+
+  .footerLogo {
+    margin: 10px 0;
+  }
+  .police {
+    text-align: center;
+  }
+  .videoWrap {
+    margin: 0 auto;
+  }
+}
+
+
+@media all and (max-width: 545px) {
+  .navigation {
+    flex-wrap: wrap;
+  }
+  .nav {
+    order: 1;
+  }
+  .avatars {
+    flex-direction: column;
+    align-items: center;
+  }
+  .blockCards {
+    align-items: center;
+  }
+
+
+  .videoWrap {
+    width: 100%;
+
+    video {
+      width: 100%;
+    }
+  }
+  .blockCards {
+    flex-direction: column;
+  }
+  .blockRectangles {
+    flex-direction: column;
+
+    .rectangle {
+      width: 100%;
+    }
+  }
+  .footerNavigation {
+    flex-direction: column;
+  }
+
+  .item__content {
+    flex-direction: column;
+  }
+  .item__img {
+    margin: 0 auto;
+  }
+
+  .footerLinks {
+    margin: 10px auto;
+  }
+
+}
+
