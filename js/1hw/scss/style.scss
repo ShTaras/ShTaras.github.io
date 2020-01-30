@@ -140,9 +140,7 @@
     text-align: center;
     margin: auto 10px;
 
-    &:hover {
-      cursor: pointer;
-    }
+
   }
 
   &__editImportance {
@@ -186,18 +184,21 @@
   &__btnEdit {
     &:hover {
       cursor: pointer;
+      transform: scale(1.2);
     }
   }
 
   &__btnCheck {
     &:hover {
       cursor: pointer;
+      transform: scale(1.2);
     }
   }
 
   &__btnDelete {
     &:hover {
       cursor: pointer;
+      transform: scale(1.2);
     }
   }
 
@@ -205,6 +206,8 @@
 
     &:hover {
       cursor: pointer;
+      opacity: 0.6;
+      transform: scale(1.2);
     }
   }
 
@@ -213,6 +216,8 @@
 
     &:hover {
       cursor: pointer;
+      opacity: 0.6;
+      transform: scale(1.2);
     }
   }
 }

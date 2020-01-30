@@ -9,14 +9,15 @@ function showDltMsg(taskID) {
             document.body.removeChild(DltMsg.window);
         }
     }
-    DltMsg.todo = document.getElementById('todoList')
+    let todo = document.getElementById('todoList')
     DltMsg.window.className = 'deleteWindow animated bounceInUp fast';
     DltMsg.btnNo.className = 'deleteWindow__btnYn';
     DltMsg.btnNo.innerHTML = 'No';
     DltMsg.btnYes.className = 'deleteWindow__btnYn';
     DltMsg.btnYes.innerHTML = 'Yes';
-    DltMsg.todo.style.opacity = '0.5';
-    DltMsg.todo.style.pointerEvents = 'none';
+  //  todo.style.opacity = '0.5';
+  //  todo.style.pointerEvents = 'none';
+    todo.style.userSelect = 'none';
     document.body.appendChild(DltMsg.window);
     DltMsg.window.innerHTML = '<p class="deleteWindow__notice">Delete item?</p>';
     DltMsg.window.appendChild(DltMsg.btnNo);
@@ -51,6 +52,7 @@ function showEditWindow(taskID) {
     editWindow.textArea.placeholder = 'New text of todo item';
     editWindow.todo.style.opacity = '0.5';
     editWindow.todo.style.pointerEvents = 'none';
+    editWindow.todo.style.userSelect = 'none';
     document.body.appendChild(editWindow.window);
     editWindow.window.innerHTML = '<p class="editWindow__notice">Edit text</p>';
     editWindow.window.appendChild(editWindow.textArea);

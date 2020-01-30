@@ -176,8 +176,6 @@
     color: white;
     text-align: center;
     margin: auto 10px; }
-    .task__importance:hover {
-      cursor: pointer; }
   .task__editImportance {
     margin: auto 2px;
     width: max-content; }
@@ -204,17 +202,24 @@
       height: auto;
       margin: 5px; }
   .task__btnEdit:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    transform: scale(1.2); }
   .task__btnCheck:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    transform: scale(1.2); }
   .task__btnDelete:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    transform: scale(1.2); }
   .task__arrowUp:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    opacity: 0.6;
+    transform: scale(1.2); }
   .task__arrowDown {
     margin-top: 15px; }
     .task__arrowDown:hover {
-      cursor: pointer; }
+      cursor: pointer;
+      opacity: 0.6;
+      transform: scale(1.2); }
 
 .task-complete .task__text {
   background-color: #d1eef4; }
